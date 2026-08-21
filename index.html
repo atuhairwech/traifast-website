@@ -3,150 +3,483 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Traifast Enterprises Company Limited is a Ugandan company providing quality products, reliable services and trusted business solutions in Hoima and across Uganda.">
-  <title>Traifast Enterprises Company Limited | Quality Products & Trusted Solutions</title>
+
+  <meta name="description"
+    content="Traifast Enterprises Company Limited provides quality products, reliable solutions, useful tools, practical guides, downloadable resources and business information.">
+
+  <meta name="keywords"
+    content="Traifast, Uganda, electrical products, home products, business resources, electrical guides, downloads, useful tools">
+
+  <meta name="author" content="Traifast Enterprises Company Limited">
+
+  <title>Traifast | Quality Products, Useful Tools & Reliable Solutions</title>
+
   <link rel="icon" type="image/png" href="traifast-favicon.png">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Traifast homepage additions */
+    .hero {
+      padding: 70px 20px 60px;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin: 20px auto;
+      max-width: 900px;
+      color: #101b2b;
+    }
+
+    .hero h1 span {
+      color: #2f67d8;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 25px auto;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #5f6b7a;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .hero-buttons a {
+      padding: 16px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .primary-btn {
+      background: #101b2b;
+      color: white;
+    }
+
+    .secondary-btn {
+      background: white;
+      color: #101b2b;
+      border: 2px solid #dce3ed;
+    }
+
+    .section {
+      padding: 65px 20px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.3rem;
+      color: #101b2b;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #687586;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .resource-card {
+      padding: 28px;
+      border: 1px solid #e3e8ef;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(20, 40, 70, 0.06);
+    }
+
+    .resource-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .resource-card h3 {
+      margin: 8px 0;
+      color: #101b2b;
+    }
+
+    .resource-card p {
+      color: #697586;
+      line-height: 1.6;
+    }
+
+    .resource-card a {
+      display: inline-block;
+      margin-top: 12px;
+      color: #2f67d8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .featured {
+      background: #f5f8fd;
+      max-width: none;
+    }
+
+    .featured-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .download-card {
+      background: #101b2b;
+      color: white;
+      border-radius: 25px;
+      padding: 35px;
+    }
+
+    .download-card h3 {
+      font-size: 1.6rem;
+    }
+
+    .download-card p {
+      color: #d5dce6;
+      line-height: 1.6;
+    }
+
+    .download-card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      background: white;
+      color: #101b2b;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 80px 20px;
+      background: #2f67d8;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #687586;
+    }
+  </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Traifast home">
-      <img src="traifast-logo-transparent.jpg"
-     alt="TRAIFAST Enterprises Company Limited"
-     style="height:90px; width:auto; display:block;">
-    </a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#services">Services</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">TRAIFAST ENTERPRISES COMPANY LIMITED</p>
-        <h1>Quality products.<br><span>Reliable solutions.</span></h1>
-        <p class="lead">Making everyday life easier through quality products, reliable services and trusted solutions.</p>
-        <div class="actions">
-          <a class="button primary" href="#products">Explore our products</a>
-          <a class="button secondary" href="#contact">Contact Traifast</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-inner">
-          <span class="hero-icon">T</span>
-          <h2>Traifast</h2>
-          <p>Home &amp; Kitchen • Electrical • Business Solutions</p>
-        </div>
-      </div>
-    </section>
+<header class="site-header">
 
-    <section id="about" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">WHO WE ARE</p>
-        <h2>Built around trust and value.</h2>
-      </div>
-      <div class="two-column">
-        <p>Traifast Enterprises Company Limited is a growing Ugandan company focused on making everyday life easier through quality products, dependable service and trusted solutions.</p>
-        <p>We aim to build long-term relationships with customers, suppliers and partners by combining professional service with products people can rely on.</p>
-      </div>
-    </section>
+  <a class="brand" href="#home" aria-label="Traifast home">
+    <img
+      src="traifast-logo-transparent.jpg"
+      alt="TRAIFAST Enterprises Company Limited"
+      style="height:90px; width:auto; display:block;">
+  </a>
 
-    <section id="products" class="section muted">
-      <div class="section-heading">
-        <p class="eyebrow">PRODUCTS</p>
-        <h2>Practical products for everyday needs.</h2>
-        <p>Our product catalogue will continue to grow. Contact us for current availability and pricing.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <span class="card-number">01</span>
-          <h3>Electrical</h3>
-          <p>Quality electrical products and accessories for homes, businesses and projects.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">02</span>
-          <h3>Home &amp; Kitchen</h3>
-          <p>Useful products selected to make homes more functional, comfortable and efficient.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">03</span>
-          <h3>Business Supplies</h3>
-          <p>Practical products and solutions for growing businesses and everyday operations.</p>
-        </article>
-      </div>
-    </section>
+  <button
+    class="menu-toggle"
+    aria-label="Open menu"
+    aria-expanded="false">
+    ☰
+  </button>
 
-    <section id="services" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">SERVICES</p>
-        <h2>Simple, dependable service.</h2>
-      </div>
-      <div class="cards">
-        <article class="card outline">
-          <h3>Customer Enquiries</h3>
-          <p>Questions about products, availability, orders or partnerships? Reach our team directly.</p>
-          <a href="mailto:enquiries@traifast.com">enquiries@traifast.com</a>
-        </article>
-        <article class="card outline">
-          <h3>Sales</h3>
-          <p>For product enquiries, quotations and sales-related requests.</p>
-          <a href="mailto:sales@traifast.com">sales@traifast.com</a>
-        </article>
-        <article class="card outline">
-          <h3>Support</h3>
-          <p>Need help after purchase? Our support channel is available for customer assistance.</p>
-          <a href="mailto:support@traifast.com">support@traifast.com</a>
-        </article>
-      </div>
-    </section>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#resources">Resources</a>
+    <a href="#tools">Tools</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <section id="careers" class="section career">
-      <div>
-        <p class="eyebrow">CAREERS</p>
-        <h2>Grow with Traifast.</h2>
-        <p>We're building a company where committed people can learn, contribute and grow.</p>
-      </div>
-      <a class="button primary" href="mailto:hr@traifast.com?subject=Career%20Enquiry">Contact HR</a>
-    </section>
+</header>
 
-    <section id="contact" class="section contact">
-      <div class="section-heading">
-        <p class="eyebrow">CONTACT</p>
-        <h2>Let's talk.</h2>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <h3>Traifast Enterprises Company Limited</h3>
-          <p>P.O. Box 490024<br>Hoima, Uganda</p>
-          <p><a href="mailto:info@traifast.com">info@traifast.com</a><br><a href="https://traifast.com">traifast.com</a></p>
-        </div>
-        <div class="contact-links">
-          <a href="mailto:info@traifast.com"><span>General</span> info@traifast.com</a>
-          <a href="mailto:sales@traifast.com"><span>Sales</span> sales@traifast.com</a>
-          <a href="mailto:hr@traifast.com"><span>HR</span> hr@traifast.com</a>
-          <a href="mailto:accounts@traifast.com"><span>Accounts</span> accounts@traifast.com</a>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div>
-      <strong>TRAIFAST</strong>
-      <p>Making everyday life easier through quality products, reliable services and trusted solutions.</p>
+<main id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <p style="color:#2f67d8;font-weight:800;letter-spacing:3px;">
+      TRAIFAST ENTERPRISES COMPANY LIMITED
+    </p>
+
+    <h1>
+      Quality products.<br>
+      <span>Reliable solutions.</span>
+    </h1>
+
+    <p>
+      Discover useful products, practical tools, downloadable resources
+      and trusted information designed to make everyday life and business easier.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="primary-btn" href="#resources">
+        Explore Resources
+      </a>
+
+      <a class="secondary-btn" href="#products">
+        Explore Products
+      </a>
     </div>
-    <div class="footer-right">
-      <span>© <span id="year"></span> Traifast Enterprises Company Limited</span>
-      <a href="#home">Back to top ↑</a>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+  </section>
+
+
+  <!-- RESOURCES -->
+  <section class="section" id="resources">
+
+    <div class="section-title">
+      <h2>Useful things on Traifast</h2>
+      <p>
+        We're building Traifast into a practical platform where you can
+        find information, tools, resources and products in one place.
+      </p>
+    </div>
+
+    <div class="resource-grid">
+
+      <article class="resource-card" id="tools">
+        <div class="icon">🧰</div>
+        <h3>Free Tools</h3>
+        <p>
+          Practical calculators and online tools to help you solve
+          everyday electrical, business and household problems.
+        </p>
+        <a href="#tools-coming">Explore tools →</a>
+      </article>
+
+      <article class="resource-card" id="downloads">
+        <div class="icon">📥</div>
+        <h3>Free Downloads</h3>
+        <p>
+          Download useful templates, checklists, guides, forms and
+          other resources created to save you time.
+        </p>
+        <a href="#downloads-coming">Browse downloads →</a>
+      </article>
+
+      <article class="resource-card">
+        <div class="icon">📚</div>
+        <h3>Knowledge Hub</h3>
+        <p>
+          Practical articles explaining electrical, business, technology,
+          home and everyday topics in simple language.
+        </p>
+        <a href="#articles">Read useful guides →</a>
+      </article>
+
+      <article class="resource-card" id="products">
+        <div class="icon">🛒</div>
+        <h3>Products</h3>
+        <p>
+          Explore quality products and solutions from Traifast as our
+          online product catalogue continues to grow.
+        </p>
+        <a href="#products-coming">Explore products →</a>
+      </article>
+
+      <article class="resource-card">
+        <div class="icon">⚡</div>
+        <h3>Electrical Resources</h3>
+        <p>
+          Electrical symbols, safety information, calculations,
+          explanations and practical electrical knowledge.
+        </p>
+        <a href="#electrical">Explore electrical →</a>
+      </article>
+
+      <article class="resource-card">
+        <div class="icon">💼</div>
+        <h3>Business Resources</h3>
+        <p>
+          Useful business templates, guides, bookkeeping resources
+          and practical information for entrepreneurs.
+        </p>
+        <a href="#business">Explore business →</a>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED RESOURCES -->
+  <section class="featured section">
+
+    <div class="featured-inner">
+
+      <div class="section-title">
+        <h2>Featured Resources</h2>
+        <p>
+          We're creating resources that people can actually use —
+          and keep coming back for.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+
+        <article class="download-card" id="tools-coming">
+          <h3>⚡ Electrical Cable Calculator</h3>
+          <p>
+            A future Traifast tool designed to help users understand
+            electrical cable sizing and related calculations.
+          </p>
+          <a href="#tools">Coming soon</a>
+        </article>
+
+        <article class="download-card" id="downloads-coming">
+          <h3>📄 Electrical Symbols Guide</h3>
+          <p>
+            A practical downloadable guide explaining common electrical
+            symbols and their meanings.
+          </p>
+          <a href="#downloads">Coming soon</a>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ARTICLES -->
+  <section class="section" id="articles">
+
+    <div class="section-title">
+      <h2>Latest from Traifast</h2>
+      <p>
+        Practical information answering real questions people ask every day.
+      </p>
+    </div>
+
+    <div class="resource-grid">
+
+      <article class="resource-card">
+        <div class="icon">⚡</div>
+        <h3>Understanding Electrical Symbols</h3>
+        <p>
+          Learn the meaning of common electrical symbols and where
+          they are used.
+        </p>
+        <a href="#article-coming">Read article →</a>
+      </article>
+
+      <article class="resource-card" id="electrical">
+        <div class="icon">🔌</div>
+        <h3>Electrical Safety at Home</h3>
+        <p>
+          Practical electrical safety information for homes,
+          businesses and workplaces.
+        </p>
+        <a href="#article-coming">Read article →</a>
+      </article>
+
+      <article class="resource-card" id="business">
+        <div class="icon">📊</div>
+        <h3>Useful Business Resources</h3>
+        <p>
+          Practical resources designed to help entrepreneurs organise
+          and manage their businesses.
+        </p>
+        <a href="#article-coming">Read article →</a>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="section" id="products-coming">
+
+    <div class="section-title">
+      <h2>Traifast Products</h2>
+      <p>
+        Our online product catalogue is being developed.
+        Soon you'll be able to discover products and solutions directly
+        through Traifast.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE AD SPACE -->
+  <section class="section" aria-label="Advertisement">
+
+    <div style="
+      min-height:100px;
+      border:1px dashed #cbd5e1;
+      border-radius:15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#94a3b8;
+      text-align:center;">
+      Advertisement space — future monetization area
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+
+    <h2>There's more coming to Traifast.</h2>
+
+    <p>
+      Products. Tools. Downloads. Knowledge. Business resources.
+      Practical solutions for everyday life.
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <strong>TRAIFAST ENTERPRISES COMPANY LIMITED</strong>
+  <br>
+  Quality Products. Reliable Solutions.
+  <br><br>
+  © 2026 Traifast Enterprises Company Limited. All rights reserved.
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
