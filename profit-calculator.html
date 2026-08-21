@@ -5,23 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="Free Traifast Profit & Markup Calculator. Calculate investment, sales revenue, gross profit, markup, profit margin, ROI and break-even selling price in UGX.">
+    content="Free Traifast Profit Calculator for Uganda. Calculate total costs, sales revenue, gross profit, net profit, markup, profit margin, ROI and break-even selling price in UGX.">
 
   <meta name="keywords"
-    content="profit calculator Uganda, markup calculator, profit margin calculator, business calculator Uganda, UGX calculator">
+    content="profit calculator Uganda, business calculator Uganda, markup calculator, profit margin calculator, ROI calculator, UGX calculator">
 
   <meta name="author" content="Traifast Enterprises Company Limited">
 
-  <title>Profit & Markup Calculator | Traifast</title>
+  <title>Profit Calculator | Traifast</title>
 
   <link rel="icon" type="image/png" href="traifast-favicon.png">
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #101c2c;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     .tool-page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 20px;
+      max-width: 1150px;
+      margin: auto;
+      padding: 75px 20px;
     }
 
     .tool-header {
@@ -40,47 +51,59 @@
     .tool-header h1 {
       font-size: clamp(42px, 6vw, 72px);
       line-height: 1;
-      margin: 20px 0;
-      color: #101c2c;
+      margin: 18px 0;
+      letter-spacing: -2px;
     }
 
     .tool-header p {
-      max-width: 760px;
+      max-width: 800px;
       margin: auto;
       color: #64748b;
-      font-size: 20px;
+      font-size: 19px;
       line-height: 1.7;
     }
 
     .calculator {
-      background: white;
+      background: #ffffff;
       border: 1px solid #dfe6ef;
       border-radius: 28px;
       padding: 38px;
       box-shadow: 0 15px 45px rgba(16, 28, 44, 0.08);
     }
 
+    .section-title {
+      font-size: 22px;
+      margin: 0 0 22px;
+    }
+
     .input-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
     .input-group label {
       display: block;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 9px;
       color: #172235;
+    }
+
+    .input-group small {
+      display: block;
+      color: #718096;
+      margin-top: 7px;
+      line-height: 1.4;
     }
 
     .input-group input {
       width: 100%;
-      box-sizing: border-box;
-      padding: 17px;
+      padding: 16px;
       border: 1px solid #d7e0eb;
       border-radius: 14px;
-      font-size: 18px;
+      font-size: 17px;
       outline: none;
+      background: #fff;
     }
 
     .input-group input:focus {
@@ -88,10 +111,14 @@
       box-shadow: 0 0 0 3px rgba(47, 103, 216, 0.12);
     }
 
+    .expenses-title {
+      margin-top: 38px;
+    }
+
     .button-row {
       display: flex;
       gap: 15px;
-      margin-top: 30px;
+      margin-top: 32px;
     }
 
     .calculate-btn,
@@ -110,13 +137,32 @@
       color: white;
     }
 
+    .calculate-btn:hover {
+      opacity: 0.92;
+    }
+
     .reset-btn {
       background: #edf2f7;
       color: #101c2c;
     }
 
+    .reset-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .status {
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+      background: #eef5ff;
+      color: #2f67d8;
+    }
+
     .results {
-      margin-top: 35px;
+      margin-top: 30px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
@@ -125,7 +171,8 @@
     .result-card {
       background: #f4f7fc;
       border-radius: 18px;
-      padding: 25px;
+      padding: 24px;
+      min-height: 125px;
     }
 
     .result-card span {
@@ -136,7 +183,7 @@
     }
 
     .result-card strong {
-      font-size: 25px;
+      font-size: 24px;
       color: #101c2c;
     }
 
@@ -150,24 +197,31 @@
     }
 
     .break-even {
-      margin-top: 20px;
+      margin-top: 22px;
       padding: 25px;
       border-radius: 18px;
       background: #eef5ff;
+      text-align: center;
+    }
+
+    .break-even span {
+      display: block;
+      color: #52627a;
+      margin-bottom: 8px;
     }
 
     .break-even strong {
       color: #2f67d8;
-      font-size: 24px;
+      font-size: 30px;
     }
 
     .explanation {
-      margin-top: 55px;
+      margin-top: 60px;
     }
 
     .explanation h2 {
-      font-size: 32px;
-      color: #101c2c;
+      font-size: 34px;
+      margin-bottom: 15px;
     }
 
     .explanation p {
@@ -185,7 +239,45 @@
       line-height: 1.7;
     }
 
-    @media (max-width: 700px) {
+    .formula strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .cta {
+      margin-top: 60px;
+      padding: 45px 30px;
+      border-radius: 25px;
+      background: #2f67d8;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 25px;
+      background: white;
+      color: #101c2c;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 750px) {
+
       .tool-page {
         padding: 50px 15px;
       }
@@ -204,7 +296,11 @@
       }
 
       .tool-header h1 {
-        font-size: 45px;
+        font-size: 46px;
+      }
+
+      .tool-header p {
+        font-size: 17px;
       }
     }
   </style>
@@ -212,239 +308,630 @@
 
 <body>
 
-  <main class="tool-page">
+<main class="tool-page">
 
-    <section class="tool-header">
+  <section class="tool-header">
 
-      <div class="tool-label">Traifast Free Tool</div>
+    <div class="tool-label">
+      Traifast Free Business Tool
+    </div>
 
-      <h1>Profit & Markup Calculator</h1>
+    <h1>
+      Profit Calculator
+    </h1>
 
-      <p>
-        Quickly calculate your investment, sales revenue, gross profit,
-        markup, profit margin, ROI and break-even selling price.
-      </p>
+    <p>
+      Calculate your total costs, sales revenue, gross profit,
+      net profit, markup, profit margin, ROI and break-even price
+      before you sell.
+    </p>
 
-    </section>
+  </section>
 
-    <section class="calculator">
 
-      <div class="input-grid">
+  <section class="calculator">
 
-        <div class="input-group">
-          <label for="buyingPrice">Buying price per item (UGX)</label>
-          <input
-            type="number"
-            id="buyingPrice"
-            placeholder="e.g. 20000"
-            min="0">
-        </div>
+    <h2 class="section-title">
+      Product & Sales Information
+    </h2>
 
-        <div class="input-group">
-          <label for="sellingPrice">Selling price per item (UGX)</label>
-          <input
-            type="number"
-            id="sellingPrice"
-            placeholder="e.g. 28000"
-            min="0">
-        </div>
+    <div class="input-grid">
 
-        <div class="input-group">
-          <label for="quantity">Quantity</label>
-          <input
-            type="number"
-            id="quantity"
-            placeholder="e.g. 100"
-            min="1">
-        </div>
+      <div class="input-group">
+        <label for="buyingPrice">
+          Buying price per item (UGX)
+        </label>
 
+        <input
+          type="number"
+          id="buyingPrice"
+          placeholder="e.g. 20000"
+          min="0"
+        >
       </div>
 
-      <div class="button-row">
 
-        <button class="calculate-btn" onclick="calculateProfit()">
-          Calculate Profit
-        </button>
+      <div class="input-group">
+        <label for="sellingPrice">
+          Selling price per item (UGX)
+        </label>
 
-        <button class="reset-btn" onclick="resetCalculator()">
-          Reset
-        </button>
-
+        <input
+          type="number"
+          id="sellingPrice"
+          placeholder="e.g. 28000"
+          min="0"
+        >
       </div>
 
-      <div class="results">
 
-        <div class="result-card">
-          <span>Total investment</span>
-          <strong id="investment">UGX 0</strong>
-        </div>
+      <div class="input-group">
+        <label for="quantity">
+          Quantity
+        </label>
 
-        <div class="result-card">
-          <span>Total sales revenue</span>
-          <strong id="revenue">UGX 0</strong>
-        </div>
-
-        <div class="result-card highlight">
-          <span>Total gross profit</span>
-          <strong id="profit">UGX 0</strong>
-        </div>
-
-        <div class="result-card">
-          <span>Profit per item</span>
-          <strong id="profitPerItem">UGX 0</strong>
-        </div>
-
-        <div class="result-card">
-          <span>Markup</span>
-          <strong id="markup">0%</strong>
-        </div>
-
-        <div class="result-card">
-          <span>Profit margin</span>
-          <strong id="margin">0%</strong>
-        </div>
-
-        <div class="result-card">
-          <span>Return on investment</span>
-          <strong id="roi">0%</strong>
-        </div>
-
+        <input
+          type="number"
+          id="quantity"
+          placeholder="e.g. 100"
+          min="1"
+        >
       </div>
 
-      <div class="break-even">
-        <span>Break-even selling price per item</span><br>
-        <strong id="breakEven">UGX 0</strong>
+    </div>
+
+
+    <h2 class="section-title expenses-title">
+      Additional Business Costs
+    </h2>
+
+    <div class="input-grid">
+
+      <div class="input-group">
+        <label for="transport">
+          Transport / Delivery (UGX)
+        </label>
+
+        <input
+          type="number"
+          id="transport"
+          placeholder="e.g. 150000"
+          min="0"
+          value="0"
+        >
       </div>
 
-    </section>
 
-    <section class="explanation">
+      <div class="input-group">
+        <label for="packaging">
+          Packaging (UGX)
+        </label>
 
-      <h2>How the calculator works</h2>
-
-      <p>
-        Enter how much you pay for one item, how much you intend to sell it
-        for, and how many items you are buying or selling.
-      </p>
-
-      <div class="formula">
-        <strong>Gross Profit</strong><br>
-        Total Sales Revenue − Total Investment
+        <input
+          type="number"
+          id="packaging"
+          placeholder="e.g. 50000"
+          min="0"
+          value="0"
+        >
       </div>
 
-      <div class="formula">
-        <strong>Markup</strong><br>
-        Profit ÷ Buying Price × 100
+
+      <div class="input-group">
+        <label for="labour">
+          Labour (UGX)
+        </label>
+
+        <input
+          type="number"
+          id="labour"
+          placeholder="e.g. 100000"
+          min="0"
+          value="0"
+        >
       </div>
 
-      <div class="formula">
-        <strong>Profit Margin</strong><br>
-        Profit ÷ Selling Price × 100
+
+      <div class="input-group">
+        <label for="otherExpenses">
+          Other expenses (UGX)
+        </label>
+
+        <input
+          type="number"
+          id="otherExpenses"
+          placeholder="e.g. 50000"
+          min="0"
+          value="0"
+        >
+
+        <small>
+          Enter other costs allocated to this particular batch,
+          such as rent, electricity, fees or miscellaneous expenses.
+        </small>
       </div>
 
-      <div class="formula">
-        <strong>ROI</strong><br>
-        Profit ÷ Investment × 100
+    </div>
+
+
+    <div class="button-row">
+
+      <button
+        class="calculate-btn"
+        onclick="calculateProfit()">
+        Calculate Profit
+      </button>
+
+      <button
+        class="reset-btn"
+        onclick="resetCalculator()">
+        Reset
+      </button>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="status">
+      Enter your figures and calculate your result.
+    </div>
+
+
+    <div class="results">
+
+      <div class="result-card">
+        <span>
+          Product investment
+        </span>
+
+        <strong id="investment">
+          UGX 0
+        </strong>
       </div>
 
-      <p>
-        This tool is useful for retailers, wholesalers, entrepreneurs,
-        students and anyone who wants to understand the profitability
-        of a product before selling it.
-      </p>
 
-    </section>
+      <div class="result-card">
+        <span>
+          Additional expenses
+        </span>
 
-  </main>
+        <strong id="expenses">
+          UGX 0
+        </strong>
+      </div>
 
-  <script>
 
-    function formatUGX(number) {
-      return "UGX " + Math.round(number).toLocaleString("en-UG");
-    }
+      <div class="result-card">
+        <span>
+          Total actual cost
+        </span>
 
-    function calculateProfit() {
+        <strong id="totalCost">
+          UGX 0
+        </strong>
+      </div>
 
-      const buyingPrice =
-        parseFloat(document.getElementById("buyingPrice").value) || 0;
 
-      const sellingPrice =
-        parseFloat(document.getElementById("sellingPrice").value) || 0;
+      <div class="result-card">
+        <span>
+          Total sales revenue
+        </span>
 
-      const quantity =
-        parseFloat(document.getElementById("quantity").value) || 0;
+        <strong id="revenue">
+          UGX 0
+        </strong>
+      </div>
 
-      if (buyingPrice <= 0 || sellingPrice <= 0 || quantity <= 0) {
-        alert("Please enter a valid buying price, selling price and quantity.");
-        return;
-      }
 
-      const investment = buyingPrice * quantity;
-      const revenue = sellingPrice * quantity;
-      const profit = revenue - investment;
-      const profitPerItem = sellingPrice - buyingPrice;
+      <div class="result-card highlight">
+        <span>
+          Estimated net profit
+        </span>
 
-      const markup =
-        (profitPerItem / buyingPrice) * 100;
+        <strong id="profit">
+          UGX 0
+        </strong>
+      </div>
 
-      const margin =
-        (profitPerItem / sellingPrice) * 100;
 
-      const roi =
-        (profit / investment) * 100;
+      <div class="result-card">
+        <span>
+          Net profit per item
+        </span>
 
-      const breakEven = buyingPrice;
+        <strong id="profitPerItem">
+          UGX 0
+        </strong>
+      </div>
 
-      document.getElementById("investment").textContent =
-        formatUGX(investment);
 
-      document.getElementById("revenue").textContent =
-        formatUGX(revenue);
+      <div class="result-card">
+        <span>
+          Markup
+        </span>
 
-      document.getElementById("profit").textContent =
-        formatUGX(profit);
+        <strong id="markup">
+          0%
+        </strong>
+      </div>
 
-      document.getElementById("profitPerItem").textContent =
-        formatUGX(profitPerItem);
 
-      document.getElementById("markup").textContent =
-        markup.toFixed(2) + "%";
+      <div class="result-card">
+        <span>
+          Net profit margin
+        </span>
 
-      document.getElementById("margin").textContent =
-        margin.toFixed(2) + "%";
+        <strong id="margin">
+          0%
+        </strong>
+      </div>
 
-      document.getElementById("roi").textContent =
-        roi.toFixed(2) + "%";
 
-      document.getElementById("breakEven").textContent =
-        formatUGX(breakEven);
+      <div class="result-card">
+        <span>
+          ROI
+        </span>
 
-      if (profit < 0) {
-        document.getElementById("profit").style.color = "#c62828";
-      } else {
-        document.getElementById("profit").style.color = "white";
-      }
-    }
+        <strong id="roi">
+          0%
+        </strong>
+      </div>
 
-    function resetCalculator() {
+    </div>
 
-      document.getElementById("buyingPrice").value = "";
-      document.getElementById("sellingPrice").value = "";
-      document.getElementById("quantity").value = "";
 
-      document.getElementById("investment").textContent = "UGX 0";
-      document.getElementById("revenue").textContent = "UGX 0";
-      document.getElementById("profit").textContent = "UGX 0";
-      document.getElementById("profitPerItem").textContent = "UGX 0";
-      document.getElementById("markup").textContent = "0%";
-      document.getElementById("margin").textContent = "0%";
-      document.getElementById("roi").textContent = "0%";
-      document.getElementById("breakEven").textContent = "UGX 0";
+    <div class="break-even">
 
-      document.getElementById("profit").style.color = "white";
-    }
+      <span>
+        Minimum break-even selling price per item
+      </span>
 
-  </script>
+      <strong id="breakEven">
+        UGX 0
+      </strong>
+
+    </div>
+
+  </section>
+
+
+  <section class="explanation">
+
+    <h2>
+      How the Traifast Profit Calculator works
+    </h2>
+
+    <p>
+      Enter the amount you pay for each item, your intended selling
+      price and the number of items involved. Then add the costs
+      associated with bringing those products to the customer.
+    </p>
+
+    <div class="formula">
+
+      <strong>
+        Total Actual Cost
+      </strong>
+
+      Product Investment + Transport + Packaging +
+      Labour + Other Expenses
+
+    </div>
+
+
+    <div class="formula">
+
+      <strong>
+        Estimated Net Profit
+      </strong>
+
+      Total Sales Revenue − Total Actual Cost
+
+    </div>
+
+
+    <div class="formula">
+
+      <strong>
+        Markup
+      </strong>
+
+      Profit per Item ÷ Buying Price × 100
+
+    </div>
+
+
+    <div class="formula">
+
+      <strong>
+        Net Profit Margin
+      </strong>
+
+      Net Profit ÷ Sales Revenue × 100
+
+    </div>
+
+
+    <div class="formula">
+
+      <strong>
+        ROI
+      </strong>
+
+      Net Profit ÷ Total Actual Cost × 100
+
+    </div>
+
+
+    <p>
+      The break-even price is the minimum average selling price
+      required to recover both the product cost and the additional
+      expenses entered above.
+    </p>
+
+    <p>
+      This calculator is designed for retailers, wholesalers,
+      entrepreneurs, students and anyone who wants to make better
+      pricing and business decisions.
+    </p>
+
+  </section>
+
+
+  <section class="cta">
+
+    <h2>
+      Build smarter. Sell smarter.
+    </h2>
+
+    <p>
+      Explore more free Traifast calculators, practical business
+      resources, electrical guides, downloadable templates and
+      useful information designed for everyday life and business.
+    </p>
+
+    <a href="index.html">
+      Explore Traifast
+    </a>
+
+  </section>
+
+</main>
+
+
+<script>
+
+function formatUGX(number) {
+
+  return "UGX " +
+    Math.round(number).toLocaleString("en-UG");
+
+}
+
+
+function getValue(id) {
+
+  return parseFloat(
+    document.getElementById(id).value
+  ) || 0;
+
+}
+
+
+function calculateProfit() {
+
+  const buyingPrice = getValue("buyingPrice");
+
+  const sellingPrice = getValue("sellingPrice");
+
+  const quantity = getValue("quantity");
+
+  const transport = getValue("transport");
+
+  const packaging = getValue("packaging");
+
+  const labour = getValue("labour");
+
+  const otherExpenses = getValue("otherExpenses");
+
+
+  if (
+    buyingPrice <= 0 ||
+    sellingPrice <= 0 ||
+    quantity <= 0
+  ) {
+
+    alert(
+      "Please enter a valid buying price, selling price and quantity."
+    );
+
+    return;
+  }
+
+
+  const investment =
+    buyingPrice * quantity;
+
+
+  const additionalExpenses =
+    transport +
+    packaging +
+    labour +
+    otherExpenses;
+
+
+  const totalCost =
+    investment +
+    additionalExpenses;
+
+
+  const revenue =
+    sellingPrice * quantity;
+
+
+  const netProfit =
+    revenue - totalCost;
+
+
+  const profitPerItem =
+    netProfit / quantity;
+
+
+  const markup =
+    ((sellingPrice - buyingPrice) / buyingPrice) * 100;
+
+
+  const margin =
+    (netProfit / revenue) * 100;
+
+
+  const roi =
+    (netProfit / totalCost) * 100;
+
+
+  const breakEven =
+    totalCost / quantity;
+
+
+  document.getElementById("investment").textContent =
+    formatUGX(investment);
+
+
+  document.getElementById("expenses").textContent =
+    formatUGX(additionalExpenses);
+
+
+  document.getElementById("totalCost").textContent =
+    formatUGX(totalCost);
+
+
+  document.getElementById("revenue").textContent =
+    formatUGX(revenue);
+
+
+  document.getElementById("profit").textContent =
+    formatUGX(netProfit);
+
+
+  document.getElementById("profitPerItem").textContent =
+    formatUGX(profitPerItem);
+
+
+  document.getElementById("markup").textContent =
+    markup.toFixed(2) + "%";
+
+
+  document.getElementById("margin").textContent =
+    margin.toFixed(2) + "%";
+
+
+  document.getElementById("roi").textContent =
+    roi.toFixed(2) + "%";
+
+
+  document.getElementById("breakEven").textContent =
+    formatUGX(breakEven);
+
+
+  const status =
+    document.getElementById("status");
+
+
+  if (netProfit > 0) {
+
+    status.textContent =
+      "✓ PROFIT — This pricing produces an estimated net profit.";
+
+    status.style.background = "#e8f7ee";
+    status.style.color = "#16834b";
+
+  }
+
+  else if (netProfit < 0) {
+
+    status.textContent =
+      "⚠ LOSS — Your selling price is below your total cost.";
+
+    status.style.background = "#fff0f0";
+    status.style.color = "#c62828";
+
+  }
+
+  else {
+
+    status.textContent =
+      "BREAK-EVEN — You recover your estimated total costs.";
+
+    status.style.background = "#fff8e6";
+    status.style.color = "#9a6700";
+
+  }
+
+}
+
+
+function resetCalculator() {
+
+  document.getElementById("buyingPrice").value = "";
+
+  document.getElementById("sellingPrice").value = "";
+
+  document.getElementById("quantity").value = "";
+
+  document.getElementById("transport").value = "0";
+
+  document.getElementById("packaging").value = "0";
+
+  document.getElementById("labour").value = "0";
+
+  document.getElementById("otherExpenses").value = "0";
+
+
+  document.getElementById("investment").textContent =
+    "UGX 0";
+
+  document.getElementById("expenses").textContent =
+    "UGX 0";
+
+  document.getElementById("totalCost").textContent =
+    "UGX 0";
+
+  document.getElementById("revenue").textContent =
+    "UGX 0";
+
+  document.getElementById("profit").textContent =
+    "UGX 0";
+
+  document.getElementById("profitPerItem").textContent =
+    "UGX 0";
+
+  document.getElementById("markup").textContent =
+    "0%";
+
+  document.getElementById("margin").textContent =
+    "0%";
+
+  document.getElementById("roi").textContent =
+    "0%";
+
+  document.getElementById("breakEven").textContent =
+    "UGX 0";
+
+
+  const status =
+    document.getElementById("status");
+
+
+  status.textContent =
+    "Enter your figures and calculate your result.";
+
+  status.style.background = "#eef5ff";
+  status.style.color = "#2f67d8";
+
+}
+
+</script>
 
 </body>
 </html>
