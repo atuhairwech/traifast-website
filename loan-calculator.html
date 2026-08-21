@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Free Traifast Loan & Interest Calculator. Calculate monthly loan payments, total interest, total repayment and the overall cost of borrowing.">
+
+  <meta name="keywords"
+        content="loan calculator Uganda, interest calculator Uganda, loan repayment calculator, monthly payment calculator, UGX loan calculator">
+
+  <meta name="author" content="Traifast Enterprises Company Limited">
+
+  <title>Loan & Interest Calculator | Traifast</title>
+
+  <link rel="icon" type="image/png" href="traifast-favicon.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .tool-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .tool-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .tool-label {
+      color: #2f68d8;
+      font-weight: 800;
+      letter-spacing: 3px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .tool-header h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1;
+      margin: 0 0 25px;
+      color: #101c2d;
+    }
+
+    .tool-header p {
+      max-width: 800px;
+      margin: auto;
+      color: #60708a;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .calculator-box {
+      background: white;
+      border: 1px solid #dce4ef;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 15px 45px rgba(16, 28, 45, 0.07);
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-group label {
+      font-weight: 700;
+      color: #101c2d;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 17px;
+      border: 1px solid #d4ddea;
+      border-radius: 14px;
+      font-size: 17px;
+      outline: none;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      border-color: #2f68d8;
+      box-shadow: 0 0 0 3px rgba(47,104,216,0.10);
+    }
+
+    .help-text {
+      color: #73819a;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .calculate-btn,
+    .reset-btn {
+      border: none;
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .calculate-btn {
+      background: #101c2d;
+      color: white;
+    }
+
+    .reset-btn {
+      background: #edf2f8;
+      color: #101c2d;
+    }
+
+    .status {
+      display: none;
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .status.success {
+      display: block;
+      background: #e8f8ef;
+      color: #087a42;
+    }
+
+    .status.error {
+      display: block;
+      background: #fff0f0;
+      color: #b42318;
+    }
+
+    .results {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .result-card {
+      background: #f4f7fc;
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .result-card.featured {
+      background: #2f68d8;
+      color: white;
+    }
+
+    .result-label {
+      font-size: 14px;
+      color: #60708a;
+      margin-bottom: 12px;
+    }
+
+    .featured .result-label {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .result-value {
+      font-size: 27px;
+      font-weight: 800;
+      color: #101c2d;
+    }
+
+    .featured .result-value {
+      color: white;
+    }
+
+    .info-section {
+      margin-top: 70px;
+    }
+
+    .info-section h2 {
+      color: #101c2d;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .info-section p {
+      color: #60708a;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .formula-box {
+      background: #101c2d;
+      color: white;
+      padding: 25px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .input-grid,
+      .results,
+      .button-row {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="tool-page">
+
+    <section class="tool-header">
+      <div class="tool-label">TRAIFAST FREE TOOL</div>
+
+      <h1>Loan & Interest Calculator</h1>
+
+      <p>
+        Estimate your monthly loan payment, total interest,
+        total repayment and the overall cost of borrowing.
+      </p>
+    </section>
+
+    <section class="calculator-box">
+
+      <div class="input-grid">
+
+        <div class="input-group">
+          <label for="loanAmount">Loan amount (UGX)</label>
+          <input id="loanAmount" type="number" placeholder="e.g. 5000000">
+          <div class="help-text">
+            Enter the amount you want to borrow.
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="interestRate">Annual interest rate (%)</label>
+          <input id="interestRate" type="number" step="0.01" placeholder="e.g. 18">
+          <div class="help-text">
+            Enter the annual interest rate.
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="loanTerm">Loan period</label>
+          <input id="loanTerm" type="number" placeholder="e.g. 24">
+          <div class="help-text">
+            Enter the number of months.
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="extraFees">Other loan fees (UGX)</label>
+          <input id="extraFees" type="number" placeholder="e.g. 100000">
+          <div class="help-text">
+            Optional processing fees or other borrowing costs.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="button-row">
+        <button class="calculate-btn" onclick="calculateLoan()">
+          Calculate Loan
+        </button>
+
+        <button class="reset-btn" onclick="resetCalculator()">
+          Reset
+        </button>
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <div class="results">
+
+        <div class="result-card featured">
+          <div class="result-label">Estimated monthly payment</div>
+          <div class="result-value" id="monthlyPayment">UGX 0</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Total loan repayment</div>
+          <div class="result-value" id="totalRepayment">UGX 0</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Total interest</div>
+          <div class="result-value" id="totalInterest">UGX 0</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Other fees</div>
+          <div class="result-value" id="displayFees">UGX 0</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Total borrowing cost</div>
+          <div class="result-value" id="totalCost">UGX 0</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Interest as % of principal</div>
+          <div class="result-value" id="interestPercentage">0%</div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="info-section">
+
+      <h2>How the calculator works</h2>
+
+      <p>
+        Enter the amount you want to borrow, the annual interest rate,
+        the loan period and any additional fees. Traifast estimates
+        the monthly repayment and the overall cost of the loan.
+      </p>
+
+      <div class="formula-box">
+        <strong>Monthly Payment</strong><br><br>
+        M = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)
+      </div>
+
+      <p>
+        This calculator uses the standard amortizing-loan formula.
+        Actual repayments may differ depending on the lender,
+        fees, insurance, repayment frequency and loan terms.
+      </p>
+
+    </section>
+
+  </main>
+
+  <script>
+    function formatUGX(number) {
+      return "UGX " + Math.round(number).toLocaleString("en-UG");
+    }
+
+    function calculateLoan() {
+
+      const principal =
+        parseFloat(document.getElementById("loanAmount").value);
+
+      const annualRate =
+        parseFloat(document.getElementById("interestRate").value);
+
+      const months =
+        parseInt(document.getElementById("loanTerm").value);
+
+      const fees =
+        parseFloat(document.getElementById("extraFees").value) || 0;
+
+      const status = document.getElementById("status");
+
+      if (!principal || principal <= 0 ||
+          !annualRate || annualRate < 0 ||
+          !months || months <= 0) {
+
+        status.className = "status error";
+        status.textContent =
+          "Please enter a valid loan amount, interest rate and loan period.";
+
+        return;
+      }
+
+      const monthlyRate = annualRate / 100 / 12;
+
+      let monthlyPayment;
+
+      if (monthlyRate === 0) {
+        monthlyPayment = principal / months;
+      } else {
+        const factor = Math.pow(1 + monthlyRate, months);
+
+        monthlyPayment =
+          principal * monthlyRate * factor / (factor - 1);
+      }
+
+      const totalRepayment = monthlyPayment * months;
+      const totalInterest = totalRepayment - principal;
+      const totalCost = totalRepayment + fees;
+
+      const interestPercentage =
+        (totalInterest / principal) * 100;
+
+      document.getElementById("monthlyPayment").textContent =
+        formatUGX(monthlyPayment);
+
+      document.getElementById("totalRepayment").textContent =
+        formatUGX(totalRepayment);
+
+      document.getElementById("totalInterest").textContent =
+        formatUGX(totalInterest);
+
+      document.getElementById("displayFees").textContent =
+        formatUGX(fees);
+
+      document.getElementById("totalCost").textContent =
+        formatUGX(totalCost);
+
+      document.getElementById("interestPercentage").textContent =
+        interestPercentage.toFixed(2) + "%";
+
+      status.className = "status success";
+      status.textContent =
+        "✓ CALCULATION COMPLETE — Review the estimated cost of borrowing below.";
+    }
+
+    function resetCalculator() {
+
+      document.getElementById("loanAmount").value = "";
+      document.getElementById("interestRate").value = "";
+      document.getElementById("loanTerm").value = "";
+      document.getElementById("extraFees").value = "";
+
+      document.getElementById("monthlyPayment").textContent = "UGX 0";
+      document.getElementById("totalRepayment").textContent = "UGX 0";
+      document.getElementById("totalInterest").textContent = "UGX 0";
+      document.getElementById("displayFees").textContent = "UGX 0";
+      document.getElementById("totalCost").textContent = "UGX 0";
+      document.getElementById("interestPercentage").textContent = "0%";
+
+      document.getElementById("status").className = "status";
+      document.getElementById("status").textContent = "";
+    }
+  </script>
+
+</body>
+</html>
