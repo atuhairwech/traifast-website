@@ -386,15 +386,66 @@ section[aria-label="Advertisement"] > div {
   font-size: 0.82rem;
 }
 
-
-/* =========================================================
+/* ================================
    FOOTER
-   ========================================================= */
+================================ */
 
-footer {
-  color: var(--traifast-muted);
+.site-footer {
+    border-top: 1px solid #e5eaf2;
+    background: #f8fafc;
+    text-align: center;
+    padding: 20px 16px 14px;
 }
 
+.footer-support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.footer-support a {
+    color: var(--traifast-muted);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-support a:hover {
+    color: var(--traifast-blue);
+}
+
+.footer-support span {
+    color: #cbd5e1;
+}
+
+.footer-bottom {
+    color: var(--traifast-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Mobile footer */
+
+@media (max-width: 620px) {
+
+    .site-footer {
+        padding: 18px 12px 12px;
+    }
+
+    .footer-support {
+        margin-bottom: 10px;
+    }
+
+    .footer-support a {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
+    }
+}
 
 /* =========================================================
    RESPONSIVE DESIGN
@@ -750,45 +801,18 @@ footer {
 </main>
 
 
-<footer>
-    <div class="footer-content">
+<footer class="site-footer">
 
-        <div class="footer-column">
-            <h3>Traifast</h3>
-            <p>Quality Products. Reliable Solutions.</p>
-            <p>Practical solutions for everyday life, business and growth.</p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Explore</h3>
-            <a href="index.html">Home</a>
-            <a href="tools.html">Free Tools</a>
-            <a href="#contact">Contact Us</a>
-        </div>
-
-        <div class="footer-column">
-            <h3>Business & Tools</h3>
-            <a href="profit-calculator.html">Profit Calculator</a>
-            <a href="selling-price-calculator.html">Selling Price Calculator</a>
-            <a href="loan-calculator.html">Loan Calculator</a>
-            <a href="roi-calculator.html">ROI Calculator</a>
-            <a href="savings-calculator.html">Savings Calculator</a>
-            <a href="vat-calculator.html">VAT Calculator</a>
-        </div>
-
-        <div class="footer-column">
-            <h3>Legal & Support</h3>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="mailto:info@traifast.com">info@traifast.com</a>
-        </div>
-
+    <div class="footer-support">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span>·</span>
+        <a href="mailto:info@traifast.com">info@traifast.com</a>
     </div>
 
     <div class="footer-bottom">
-        <p>
-            © 2026 Traifast Enterprises Company Limited. All rights reserved.
-        </p>
+        © 2026 Traifast Enterprises Company Limited. All rights reserved.
     </div>
+
 </footer>
 
 
