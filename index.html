@@ -32,7 +32,84 @@
   --traifast-white: #ffffff;
 }
 
+/* =========================================================
+   SITE HEADER
+   ========================================================= */
 
+.site-header {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-bottom: 1px solid var(--traifast-border);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Traifast logo */
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand img {
+  width: 105px;
+  height: auto;
+  max-height: 62px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Desktop navigation */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--traifast-dark);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--traifast-blue);
+}
+
+/* Mobile menu button */
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2.5px;
+  background: var(--traifast-blue);
+  border-radius: 2px;
+}
 /* =========================================================
    HERO
    ========================================================= */
@@ -394,15 +471,65 @@ section[aria-label="Advertisement"] > div {
     border-top: 1px solid #e5eaf2;
     background: #f8fafc;
     text-align: center;
-    padding: 20px 16px 14px;
+    padding: 22px 16px 14px;
 }
+
+/* Share section */
+
+.footer-share {
+    margin-bottom: 16px;
+}
+
+.footer-share-title {
+    margin: 0 0 10px;
+    color: var(--traifast-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.footer-share-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.footer-share-buttons a,
+.footer-share-buttons button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    padding: 0 11px;
+    border: 1px solid #dfe5ee;
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--traifast-muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.footer-share-buttons a:hover,
+.footer-share-buttons button:hover {
+    border-color: var(--traifast-blue);
+    color: var(--traifast-blue);
+    transform: translateY(-1px);
+}
+
+/* Privacy */
 
 .footer-support {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .footer-support a {
@@ -419,6 +546,8 @@ section[aria-label="Advertisement"] > div {
     color: #cbd5e1;
 }
 
+/* Copyright */
+
 .footer-bottom {
     color: var(--traifast-muted);
     font-size: 12px;
@@ -431,11 +560,27 @@ section[aria-label="Advertisement"] > div {
 @media (max-width: 620px) {
 
     .site-footer {
-        padding: 18px 12px 12px;
+        padding: 20px 12px 12px;
     }
 
-    .footer-support {
-        margin-bottom: 10px;
+    .footer-share {
+        margin-bottom: 14px;
+    }
+
+    .footer-share-title {
+        font-size: 12px;
+    }
+
+    .footer-share-buttons {
+        gap: 6px;
+    }
+
+    .footer-share-buttons a,
+    .footer-share-buttons button {
+        min-width: 36px;
+        height: 36px;
+        padding: 0 9px;
+        font-size: 11px;
     }
 
     .footer-support a {
@@ -446,7 +591,6 @@ section[aria-label="Advertisement"] > div {
         font-size: 11px;
     }
 }
-
 /* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */
@@ -530,28 +674,31 @@ section[aria-label="Advertisement"] > div {
 
 <header class="site-header">
 
-  <a class="brand" href="#home" aria-label="Traifast home">
-    <img
-      src="traifast-logo-transparent.jpg"
-      alt="TRAIFAST Enterprises Company Limited"
-      style="height:90px; width:auto; display:block;">
-  </a>
+    <a class="brand" href="index.html" aria-label="Traifast home">
+        <img
+            src="traifast-logo-transparent.jpg"
+            alt="Traifast"
+        >
+    </a>
 
-  <button
-    class="menu-toggle"
-    aria-label="Open menu"
-    aria-expanded="false">
-    ☰
-  </button>
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-  <nav class="nav" aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#resources">Resources</a>
-    <a href="#tools">Tools</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
 
 </header>
 
@@ -803,12 +950,83 @@ section[aria-label="Advertisement"] > div {
 
 <footer class="site-footer">
 
-    <div class="footer-support">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span>·</span>
-        <a href="mailto:info@traifast.com">info@traifast.com</a>
+    <!-- Share Traifast -->
+    <div class="footer-share">
+
+        <p class="footer-share-title">Share Traifast</p>
+
+        <div class="footer-share-buttons">
+
+            <a
+                href="https://wa.me/?text=Check%20out%20Traifast%20-%20https%3A%2F%2Ftraifast.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Share on WhatsApp"
+                title="Share on WhatsApp">
+                WhatsApp
+            </a>
+
+            <a
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftraifast.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Share on Facebook"
+                title="Share on Facebook">
+                Facebook
+            </a>
+
+            <a
+                href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftraifast.com&text=Check%20out%20Traifast"
+                target="_blank"
+                rel="noopener"
+                aria-label="Share on X"
+                title="Share on X">
+                X
+            </a>
+
+            <a
+                href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftraifast.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Share on LinkedIn"
+                title="Share on LinkedIn">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://t.me/share/url?url=https%3A%2F%2Ftraifast.com&text=Check%20out%20Traifast"
+                target="_blank"
+                rel="noopener"
+                aria-label="Share on Telegram"
+                title="Share on Telegram">
+                Telegram
+            </a>
+
+            <button
+                type="button"
+                onclick="navigator.share ? navigator.share({title: 'Traifast', text: 'Check out Traifast', url: window.location.href}) : alert('Sharing is not supported on this browser.')"
+                aria-label="Share Traifast"
+                title="Share Traifast">
+                Share
+            </button>
+
+        </div>
     </div>
 
+    <!-- Privacy + Email -->
+    <div class="footer-support">
+
+        <a href="privacy-policy.html">Privacy Policy</a>
+
+        <span>•</span>
+
+        <a href="mailto:info@traifast.com">
+            info@traifast.com
+        </a>
+
+    </div>
+
+    <!-- Copyright -->
     <div class="footer-bottom">
         © 2026 Traifast Enterprises Company Limited. All rights reserved.
     </div>
