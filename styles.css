@@ -36,6 +36,12 @@ a { color: inherit; }
   border-bottom: 1px solid rgba(223,230,236,.8);
 }
 .brand { display:flex; align-items:center; gap:11px; text-decoration:none; }
+.brand img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+}
 .brand-mark, .hero-icon {
   display:grid; place-items:center;
   width:42px; height:42px;
