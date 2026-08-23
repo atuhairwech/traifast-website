@@ -577,3 +577,32 @@ h1 span { color:var(--accent); }
         display: flex !important;
     }
 }
+/* =========================================================
+   FINAL RESPONSIVE NAVIGATION FIX
+   ========================================================= */
+
+/* TABLET & MOBILE */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .nav {
+        display: none !important;
+    }
+
+    .nav.open {
+        display: flex !important;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 901px) {
+    .menu-toggle {
+        display: none !important;
+    }
+
+    .nav {
+        display: flex !important;
+    }
+}
