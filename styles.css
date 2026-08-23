@@ -186,7 +186,7 @@ h1 span { color:var(--accent); }
   }
 
   /* NAVIGATION */
-  .nav {
+.nav {
     display: none;
 
     position: absolute;
@@ -200,32 +200,35 @@ h1 span { color:var(--accent); }
     align-items: stretch;
     gap: 0;
 
-    padding: 10px 20px 15px;
+    background: #ffffff;
 
-    background: rgba(255, 255, 255, .98);
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
 
-    border-bottom: 1px solid rgba(223, 230, 236, .8);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
 
-    box-shadow: 0 10px 25px rgba(15, 23, 42, .08);
-  }
-
-  .nav.open {
+.nav.open {
     display: flex;
-  }
+}
 
-  .nav a {
+.nav a {
     display: block;
     width: 100%;
-    padding: 13px 5px;
 
-    font-size: .95rem;
+    padding: 14px 24px;
+
+    text-align: left;
+
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
-  }
+}
 
-  .nav a:hover {
+.nav a:hover {
     color: var(--accent);
-  }
-
+    background: #f8fafc;
+}
   /* PAGE CONTENT */
   .hero,
   .two-column,
