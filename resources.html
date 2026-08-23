@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Useful resources from Traifast Enterprises Company Limited, including guides, business resources, electrical resources, household resources and practical templates.">
+
+    <meta name="robots" content="index, follow">
+
+    <title>Resources | Traifast</title>
+
+    <link rel="icon" type="image/png" href="traifast-favicon.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .resources-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 25px 80px;
+        }
+
+        .resources-hero {
+            text-align: center;
+            padding: 20px 0 60px;
+        }
+
+        .resources-hero .eyebrow {
+            color: #2f67d8;
+            font-weight: 800;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .resources-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            margin: 0 auto 25px;
+            max-width: 850px;
+            color: #101c2d;
+        }
+
+        .resources-hero h1 span {
+            color: #2f67d8;
+        }
+
+        .resources-hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: #687586;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .resource-card {
+            border: 1px solid #e1e7ef;
+            border-radius: 18px;
+            padding: 32px;
+            background: #ffffff;
+            box-shadow: 0 8px 25px rgba(16, 28, 45, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(16, 28, 45, 0.09);
+        }
+
+        .resource-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #eef4ff;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .resource-card h2 {
+            margin: 0 0 12px;
+            color: #101c2d;
+            font-size: 25px;
+        }
+
+        .resource-card p {
+            color: #687586;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .resource-card a {
+            color: #2f67d8;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+
+        .coming-section {
+            margin-top: 70px;
+            background: #2f67d8;
+            color: white;
+            border-radius: 0 0 28px 28px;
+            padding: 55px 25px;
+            text-align: center;
+        }
+
+        .coming-section h2 {
+            margin: 0 0 15px;
+            font-size: clamp(30px, 4vw, 44px);
+        }
+
+        .coming-section p {
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .resources-footer-note {
+            text-align: center;
+            margin-top: 45px;
+            color: #687586;
+            font-size: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .resources-page {
+                padding: 45px 20px 60px;
+            }
+
+            .resources-hero {
+                padding-bottom: 40px;
+            }
+
+            .resources-hero p {
+                font-size: 17px;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-card {
+                padding: 26px;
+            }
+
+            .coming-section {
+                margin-top: 50px;
+                border-radius: 0 0 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a class="brand" href="index.html" aria-label="Traifast home">
+        <img
+            src="traifast-logo-transparent.jpg"
+            alt="Traifast"
+        >
+    </a>
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<main class="resources-page">
+
+    <!-- HERO -->
+
+    <section class="resources-hero">
+
+        <p class="eyebrow">
+            TRAIFAST RESOURCES
+        </p>
+
+        <h1>
+            Useful information.
+            <br>
+            <span>Practical resources.</span>
+        </h1>
+
+        <p>
+            Explore useful guides, business resources, electrical information,
+            household resources and practical materials designed to help you
+            learn, plan and get things done.
+        </p>
+
+    </section>
+
+
+    <!-- RESOURCE CATEGORIES -->
+
+    <section class="resource-grid">
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                📘
+            </div>
+
+            <h2>Guides & Information</h2>
+
+            <p>
+                Practical guides and easy-to-understand information covering
+                everyday topics, useful knowledge and things that can make
+                life and work easier.
+            </p>
+
+            <a href="#">
+                Explore guides →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                💼
+            </div>
+
+            <h2>Business Resources</h2>
+
+            <p>
+                Useful business information, templates, checklists and
+                practical resources for entrepreneurs, small businesses
+                and growing enterprises.
+            </p>
+
+            <a href="#">
+                Explore business resources →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                ⚡
+            </div>
+
+            <h2>Electrical Resources</h2>
+
+            <p>
+                Electrical reference materials, practical information,
+                calculations, guides and resources designed for technicians,
+                learners and everyday users.
+            </p>
+
+            <a href="tools.html">
+                Explore electrical tools →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                🏠
+            </div>
+
+            <h2>Home & Household</h2>
+
+            <p>
+                Practical household information, useful tips, checklists
+                and resources designed to help with everyday home needs.
+            </p>
+
+            <a href="#">
+                Explore household resources →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                📋
+            </div>
+
+            <h2>Templates & Checklists</h2>
+
+            <p>
+                Ready-to-use templates, checklists, forms and practical
+                materials that can help you organize work and save time.
+            </p>
+
+            <a href="downloads.html">
+                Browse downloads →
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                💡
+            </div>
+
+            <h2>Tips & Knowledge</h2>
+
+            <p>
+                Useful ideas, explanations and practical knowledge covering
+                technology, business, money, everyday life and more.
+            </p>
+
+            <a href="#">
+                Discover more →
+            </a>
+
+        </article>
+
+    </section>
+
+
+    <!-- COMING SOON -->
+
+    <section class="coming-section">
+
+        <h2>
+            More resources are coming.
+        </h2>
+
+        <p>
+            Traifast is building a growing collection of useful information,
+            guides, tools, templates and practical resources. New materials
+            will be added as the platform grows.
+        </p>
+
+    </section>
+
+
+    <p class="resources-footer-note">
+        Traifast — useful things, practical solutions.
+    </p>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-support">
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <span>•</span>
+
+        <a href="mailto:info@traifast.com">
+            info@traifast.com
+        </a>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © <span id="year"></span>
+        Traifast Enterprises Company Limited.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
