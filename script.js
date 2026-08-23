@@ -59,3 +59,18 @@ const yearElement = document.getElementById("year");
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+/* -----------------------------------------
+   COPY PAGE LINK
+   ----------------------------------------- */
+
+function copyPageLink() {
+
+  navigator.clipboard.writeText(window.location.href)
+    .then(() => {
+      alert("Traifast link copied!");
+    })
+    .catch(() => {
+      alert("Unable to copy the link. Please copy it manually.");
+    });
+
+}
