@@ -158,62 +158,63 @@ h1 span { color:var(--accent); }
   }
 
   /* HAMBURGER */
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    width: 44px;
-    height: 44px;
-    padding: 0;
+        width: 44px;
+        height: 44px;
+        padding: 0;
 
-    border: 1px solid rgba(15, 23, 42, .15);
-    border-radius: 10px;
+        border: 1px solid rgba(15, 23, 42, .15);
+        border-radius: 10px;
 
-    background: #ffffff;
-    color: #2563eb;
-    cursor: pointer;
-    flex-shrink: 0;
+        background: #ffffff;
+        color: #2563eb;
+        cursor: pointer;
+        flex-shrink: 0;
 
-    font-size: 1.5rem;
-    line-height: 1;
-    font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: 500;
 
-    transition:
-        background-color .2s ease,
-        color .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease,
-        transform .2s ease;
-}
-  .menu-toggle:hover {
-    border-color: #2563eb;
-    box-shadow: 0 6px 16px rgba(37, 99, 235, .15);
-}
+        transition:
+            background-color .2s ease,
+            color .2s ease,
+            border-color .2s ease,
+            box-shadow .2s ease,
+            transform .2s ease;
+    }
 
-.menu-toggle:active {
-    transform: scale(.96);
-}
+    .menu-toggle:hover {
+        border-color: #2563eb;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, .15);
+    }
 
-.menu-toggle[aria-expanded="true"] {
-    background: #2563eb;
-    border-color: #2563eb;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, .25);
-}
-  .menu-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: #0f172a;
-    border-radius: 2px;
-  }
+    .menu-toggle:active {
+        transform: scale(.96);
+    }
 
-  /* NAVIGATION */
-.nav {
-    display: none;
+    .menu-toggle[aria-expanded="true"] {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, .25);
+    }
 
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #0f172a;
+        border-radius: 2px;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -316,7 +317,6 @@ h1 span { color:var(--accent); }
     font-size: .8rem;
     line-height: 1.5;
   }
-}
 
 
 /* =========================================
@@ -561,4 +561,19 @@ h1 span { color:var(--accent); }
     padding-top: 20px;
     font-size: .78rem;
   }
+  }
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    .nav {
+        display: flex !important;
+    }
 }
