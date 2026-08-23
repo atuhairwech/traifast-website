@@ -1,21 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1">
 
     <meta
         name="description"
-        content="Explore products from Traifast, including electrical products, home and kitchen products, and practical solutions.">
+        content="Explore products from Traifast Enterprises Company Limited, including electrical products, home and kitchen products, and practical solutions.">
+
+    <meta
+        name="keywords"
+        content="Traifast, products, electrical products, home products, kitchen products, Uganda">
+
+    <meta
+        name="author"
+        content="Traifast Enterprises Company Limited">
 
     <title>Products | Traifast</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="icon"
+        type="image/png"
+        href="traifast-favicon.png">
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
+
+
+    <style>
+
+        /* =====================================================
+           TRAIFAST PRODUCTS PAGE
+           ===================================================== */
+
+        .products-page {
+            padding: 70px 20px 80px;
+        }
+
+
+        /* HERO */
+
+        .products-hero {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px 0 65px;
+        }
+
+        .products-hero .eyebrow {
+            color: #2f67d8;
+            font-weight: 800;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .products-hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            line-height: 1.05;
+            margin: 0 0 24px;
+            color: #101b2b;
+        }
+
+        .products-hero h1 span {
+            color: #2f67d8;
+        }
+
+        .products-hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #687586;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+
+        /* PRODUCT CATEGORIES */
+
+        .products-section {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(260px, 1fr)
+            );
+
+            gap: 22px;
+        }
+
+        .product-category {
+            padding: 30px;
+
+            border: 1px solid #e3e8ef;
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 8px 25px rgba(20, 40, 70, 0.06);
+        }
+
+        .product-category .icon {
+            font-size: 2.3rem;
+            margin-bottom: 18px;
+        }
+
+        .product-category h2 {
+            margin: 0 0 12px;
+
+            color: #101b2b;
+            font-size: 1.55rem;
+        }
+
+        .product-category p {
+            color: #687586;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .product-category ul {
+            margin: 0;
+            padding-left: 20px;
+
+            color: #263449;
+            line-height: 1.8;
+        }
+
+
+        /* COMING SOON */
+
+        .products-coming {
+            max-width: 900px;
+            margin: 70px auto 0;
+
+            padding: 50px 25px;
+
+            text-align: center;
+
+            background: #f5f8fd;
+
+            border: 1px solid #e3e8ef;
+            border-radius: 22px;
+        }
+
+        .products-coming h2 {
+            margin: 0 0 14px;
+
+            color: #101b2b;
+            font-size: 2rem;
+        }
+
+        .products-coming p {
+            max-width: 680px;
+            margin: 0 auto;
+
+            color: #687586;
+            line-height: 1.7;
+        }
+
+
+        /* CONTACT CTA */
+
+        .products-cta {
+            max-width: 900px;
+            margin: 50px auto 0;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            background: #2f67d8;
+            color: #ffffff;
+
+            border-radius: 22px;
+        }
+
+        .products-cta h2 {
+            margin: 0 0 12px;
+            font-size: 2rem;
+        }
+
+        .products-cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+
+            line-height: 1.7;
+        }
+
+        .products-cta a {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding: 0 22px;
+
+            border-radius: 9px;
+
+            background: #ffffff;
+            color: #101b2b;
+
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 620px) {
+
+            .products-page {
+                padding: 45px 17px 60px;
+            }
+
+            .products-hero {
+                padding-bottom: 45px;
+            }
+
+            .products-hero p {
+                font-size: 1rem;
+            }
+
+            .product-category {
+                padding: 25px;
+            }
+
+            .products-coming,
+            .products-cta {
+                padding: 35px 20px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -23,239 +252,230 @@
 <body>
 
 
-<!-- =========================================
-     HEADER
-     ========================================= -->
+<!-- =====================================================
+     MASTER HEADER
+     ===================================================== -->
 
 <header class="site-header">
 
-    <div class="header-inner">
+    <a
+        class="brand"
+        href="index.html"
+        aria-label="Traifast home">
 
-        <!-- Traifast Logo -->
-        <a href="index.html" class="logo-link" aria-label="Traifast Home">
+        <img
+            src="traifast-logo-transparent.jpg"
+            alt="Traifast">
 
-            <img
-                src="logo.png"
-                alt="Traifast"
-                class="logo">
-
-        </a>
-
-
-        <!-- Mobile Menu Button -->
-
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
+    </a>
 
 
-        <!-- Main Navigation -->
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        type="button">
 
-        <nav class="nav" aria-label="Main navigation">
+        <span></span>
+        <span></span>
+        <span></span>
 
-            <a href="index.html">Home</a>
+    </button>
 
-            <a href="resources.html">Resources</a>
 
-            <a href="tools.html">Tools</a>
+    <nav
+        class="nav"
+        aria-label="Main navigation">
 
-            <a href="downloads.html">Downloads</a>
+        <a href="index.html">Home</a>
 
-            <a href="products.html">Products</a>
+        <a href="resources.html">Resources</a>
 
-            <a href="contact.html">Contact</a>
+        <a href="tools.html">Tools</a>
 
-        </nav>
+        <a href="downloads.html">Downloads</a>
 
-    </div>
+        <a href="products.html">Products</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
 
 </header>
 
 
 
-<!-- =========================================
-     MAIN CONTENT
-     ========================================= -->
+<!-- =====================================================
+     PRODUCTS CONTENT
+     ===================================================== -->
 
-<main>
+<main class="products-page">
 
 
-    <!-- PAGE INTRO -->
+    <section class="products-hero">
 
-    <section class="page-hero">
+        <p class="eyebrow">
+            TRAIFAST PRODUCTS
+        </p>
 
-        <div class="container">
+        <h1>
+            Quality products.
+            <br>
+            <span>Practical solutions.</span>
+        </h1>
 
-            <h1>Products</h1>
-
-            <p>
-                Explore useful products and practical solutions
-                from Traifast.
-            </p>
-
-        </div>
+        <p>
+            Explore products and solutions from Traifast as we
+            build a growing catalogue for electrical work, homes,
+            kitchens and everyday needs.
+        </p>
 
     </section>
 
 
 
-    <!-- PRODUCTS -->
+    <section class="products-section">
 
-    <section class="content-section">
+        <div class="products-grid">
 
-        <div class="container">
 
-            <div class="section-heading">
+            <!-- ELECTRICAL -->
 
-                <h2>Our Products</h2>
+            <article class="product-category">
+
+                <div class="icon">
+                    ⚡
+                </div>
+
+                <h2>
+                    Electrical Products
+                </h2>
 
                 <p>
-                    Traifast is building a growing collection of
-                    products for electrical work, homes, kitchens,
-                    and everyday needs.
+                    Electrical products and installation materials
+                    for homes, businesses and electrical projects.
                 </p>
 
-            </div>
+                <ul>
 
+                    <li>Cables and wires</li>
+                    <li>Switches and sockets</li>
+                    <li>Circuit protection</li>
+                    <li>Lighting products</li>
+                    <li>Electrical accessories</li>
 
-            <!-- PRODUCT CATEGORIES -->
+                </ul>
 
-            <div class="card-grid">
-
-
-                <!-- ELECTRICAL -->
-
-                <article class="card">
-
-                    <h3>Electrical Products</h3>
-
-                    <p>
-                        Practical electrical products and
-                        installation materials for homes,
-                        businesses and electrical projects.
-                    </p>
-
-                    <ul>
-
-                        <li>Cables and wires</li>
-
-                        <li>Switches and sockets</li>
-
-                        <li>Circuit protection</li>
-
-                        <li>Lighting products</li>
-
-                        <li>Electrical accessories</li>
-
-                    </ul>
-
-                </article>
+            </article>
 
 
 
-                <!-- HOME -->
+            <!-- HOME & KITCHEN -->
 
-                <article class="card">
+            <article class="product-category">
 
-                    <h3>Home &amp; Kitchen</h3>
+                <div class="icon">
+                    🏠
+                </div>
 
-                    <p>
-                        Useful household and kitchen products
-                        selected with practicality and everyday
-                        use in mind.
-                    </p>
+                <h2>
+                    Home &amp; Kitchen
+                </h2>
 
-                    <ul>
+                <p>
+                    Useful products for everyday household and
+                    kitchen needs.
+                </p>
 
-                        <li>Cookware</li>
+                <ul>
 
-                        <li>Kitchen utensils</li>
+                    <li>Cookware</li>
+                    <li>Kitchen utensils</li>
+                    <li>Household items</li>
+                    <li>Home accessories</li>
+                    <li>Everyday practical products</li>
 
-                        <li>Household items</li>
+                </ul>
 
-                        <li>Home accessories</li>
-
-                        <li>Practical everyday products</li>
-
-                    </ul>
-
-                </article>
-
-
-
-                <!-- COMING SOON -->
-
-                <article class="card">
-
-                    <h3>More Products Coming</h3>
-
-                    <p>
-                        Our product range will continue to grow
-                        as Traifast expands.
-                    </p>
-
-                    <p>
-                        More products, categories and solutions
-                        will be added to this page.
-                    </p>
-
-                </article>
+            </article>
 
 
-            </div>
+
+            <!-- MORE PRODUCTS -->
+
+            <article class="product-category">
+
+                <div class="icon">
+                    🛒
+                </div>
+
+                <h2>
+                    More Products
+                </h2>
+
+                <p>
+                    Traifast will continue expanding its product
+                    catalogue as the business grows.
+                </p>
+
+                <ul>
+
+                    <li>New product categories</li>
+                    <li>Practical solutions</li>
+                    <li>Business supplies</li>
+                    <li>Useful everyday products</li>
+
+                </ul>
+
+            </article>
+
 
         </div>
 
-    </section>
 
+        <section class="products-coming">
 
-
-    <!-- CONTACT CTA -->
-
-    <section class="cta-section">
-
-        <div class="container">
-
-            <h2>Looking for something specific?</h2>
+            <h2>
+                Our catalogue is growing.
+            </h2>
 
             <p>
-                Contact Traifast and let us know what you are
-                looking for.
+                Individual products, product images, specifications,
+                prices and availability will be added as the Traifast
+                online catalogue develops.
             </p>
 
-            <a
-                href="contact.html"
-                class="button">
+        </section>
 
+
+        <section class="products-cta">
+
+            <h2>
+                Looking for something specific?
+            </h2>
+
+            <p>
+                Contact Traifast if you have a question about a
+                product or something you are looking for.
+            </p>
+
+            <a href="contact.html">
                 Contact Traifast
-
             </a>
 
-        </div>
+        </section>
 
     </section>
-
 
 </main>
 
 
 
-<!-- =========================================
-     FOOTER
-     ========================================= -->
+<!-- =====================================================
+     MASTER FOOTER
+     ===================================================== -->
 
 <footer class="site-footer">
-
-
-    <!-- Share Traifast -->
 
     <div class="footer-share">
 
@@ -263,9 +483,7 @@
             Share Traifast
         </p>
 
-
         <div class="footer-share-buttons">
-
 
             <a
                 href="https://wa.me/?text=Check%20out%20Traifast%20-%20https%3A%2F%2Ftraifast.com"
@@ -273,11 +491,8 @@
                 rel="noopener"
                 aria-label="Share on WhatsApp"
                 title="Share on WhatsApp">
-
                 WhatsApp
-
             </a>
-
 
             <a
                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftraifast.com"
@@ -285,11 +500,8 @@
                 rel="noopener"
                 aria-label="Share on Facebook"
                 title="Share on Facebook">
-
                 Facebook
-
             </a>
-
 
             <a
                 href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftraifast.com&text=Check%20out%20Traifast"
@@ -297,11 +509,8 @@
                 rel="noopener"
                 aria-label="Share on X"
                 title="Share on X">
-
                 X
-
             </a>
-
 
             <a
                 href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftraifast.com"
@@ -309,11 +518,8 @@
                 rel="noopener"
                 aria-label="Share on LinkedIn"
                 title="Share on LinkedIn">
-
                 LinkedIn
-
             </a>
-
 
             <a
                 href="https://t.me/share/url?url=https%3A%2F%2Ftraifast.com&text=Check%20out%20Traifast"
@@ -321,30 +527,21 @@
                 rel="noopener"
                 aria-label="Share on Telegram"
                 title="Share on Telegram">
-
                 Telegram
-
             </a>
-
 
             <button
                 type="button"
-                onclick="navigator.share ? navigator.share({title: 'Traifast', text: 'Check out Traifast', url: window.location.href}) : alert('Sharing is not supported on this browser.')"
+                onclick="navigator.share ? navigator.share({title: document.title, text: 'Check out Traifast', url: window.location.href}) : alert('Sharing is not supported on this browser.')"
                 aria-label="Share Traifast"
                 title="Share Traifast">
-
                 Share
-
             </button>
-
 
         </div>
 
     </div>
 
-
-
-    <!-- Privacy + Email -->
 
     <div class="footer-support">
 
@@ -361,9 +558,6 @@
     </div>
 
 
-
-    <!-- Copyright -->
-
     <div class="footer-bottom">
 
         © <span id="year"></span>
@@ -372,9 +566,7 @@
 
     </div>
 
-
 </footer>
-
 
 
 <script src="script.js"></script>
