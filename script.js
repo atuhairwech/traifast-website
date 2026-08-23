@@ -68,8 +68,8 @@ function sharePage() {
   if (navigator.share) {
 
     navigator.share({
-      title: "Traifast | Resources",
-      text: "Explore useful resources from Traifast.",
+      title: document.title,
+      text: "Explore Traifast.",
       url: window.location.href
     }).catch(() => {});
 
@@ -80,20 +80,5 @@ function sharePage() {
     alert("Page link copied to clipboard.");
 
   }
-
-}
-/* -----------------------------------------
-   COPY PAGE LINK
-   ----------------------------------------- */
-
-function copyPageLink() {
-
-  navigator.clipboard.writeText(window.location.href)
-    .then(() => {
-      alert("Traifast link copied!");
-    })
-    .catch(() => {
-      alert("Unable to copy the link. Please copy it manually.");
-    });
 
 }
