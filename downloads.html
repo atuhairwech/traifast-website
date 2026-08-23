@@ -4,180 +4,421 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Free Traifast downloads including business templates, electrical resources, guides and practical documents.">
+
+    <meta name="keywords"
+          content="Traifast downloads, business templates Uganda, electrical documents, free business resources">
+
+    <meta name="author" content="Traifast Enterprises Company Limited">
+
     <title>Downloads | Traifast</title>
 
-    <meta
-        name="description"
-        content="Download useful documents, guides, templates and resources from Traifast."
-    >
+    <link rel="icon" type="image/png" href="traifast-favicon.png">
+    <link rel="stylesheet" href="styles.css">
 
-      <link rel="icon" type="image/png" href="traifast-favicon.png">
-  <link rel="stylesheet" href="styles.css">
+    <style>
+        .downloads-page {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+        }
 
-  <style>
+        .downloads-header {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 60px;
+        }
+
+        .downloads-label {
+            color: #2f67d8;
+            font-weight: 800;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .downloads-header h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1;
+            color: #101c2e;
+            margin: 0 0 25px;
+        }
+
+        .downloads-header p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #60708a;
+        }
+
+        .download-section-title {
+            margin: 55px 0 25px;
+            color: #101c2e;
+            font-size: 30px;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .download-card {
+            border: 1px solid #dce4ef;
+            border-radius: 22px;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 12px 35px rgba(16, 28, 46, 0.06);
+        }
+
+        .download-icon {
+            font-size: 36px;
+            margin-bottom: 18px;
+        }
+
+        .download-card h3 {
+            color: #101c2e;
+            font-size: 23px;
+            margin: 0 0 12px;
+        }
+
+        .download-card p {
+            color: #60708a;
+            line-height: 1.65;
+            margin-bottom: 25px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: #2f67d8;
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .download-button:hover {
+            opacity: 0.9;
+        }
+
+        .coming-soon-card {
+            opacity: 0.75;
+        }
+
+        .coming-soon-label {
+            color: #7b8799;
+            font-weight: 800;
+        }
+
+        .downloads-cta {
+            margin-top: 70px;
+            padding: 55px 30px;
+            text-align: center;
+            background: #2f67d8;
+            color: white;
+            border-radius: 28px;
+        }
+
+        .downloads-cta h2 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .downloads-cta p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        @media (max-width: 900px) {
+            .downloads-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header class="site-header">
-    <div class="header-inner">
 
-        <a href="index.html" class="brand">
-            <img src="logo.png" alt="Traifast">
-        </a>
+    <a class="brand" href="index.html" aria-label="Traifast home">
+        <img
+            src="traifast-logo-transparent.jpg"
+            alt="Traifast">
+    </a>
 
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="resources.html">Resources</a>
-            <a href="tools.html">Tools</a>
-            <a href="downloads.html" class="active">Downloads</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        type="button">
 
-        <button class="menu-toggle" aria-label="Open menu">
-            ☰
-        </button>
+        <span></span>
+        <span></span>
+        <span></span>
 
-    </div>
+    </button>
+
+    <nav class="nav" aria-label="Main navigation">
+
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#contact">Contact</a>
+
+    </nav>
+
 </header>
 
 
-<main>
+<main class="downloads-page">
 
-    <!-- Hero -->
-    <section class="page-hero">
-        <div class="page-hero-inner">
+    <section class="downloads-header">
 
-            <p class="eyebrow">TRAIFAST</p>
-
-            <h1>
-                Useful downloads.<br>
-                <span>Practical resources.</span>
-            </h1>
-
-            <p>
-                Download useful documents, guides, templates and other
-                resources designed to make everyday life and business easier.
-            </p>
-
-        </div>
-    </section>
-
-
-    <!-- Downloads -->
-    <section class="content-section">
-
-        <div class="section-heading">
-            <h2>Downloads</h2>
-
-            <p>
-                We're building a growing collection of useful resources.
-                New downloads will be added as they become available.
-            </p>
+        <div class="downloads-label">
+            TRAIFAST DOWNLOADS
         </div>
 
+        <h1>
+            Useful downloads.
+            <br>
+            Practical resources.
+        </h1>
 
-        <div class="download-grid">
-
-            <!-- Coming Soon -->
-            <article class="download-card">
-
-                <div class="download-icon">
-                    ↓
-                </div>
-
-                <div class="download-content">
-
-                    <span class="download-category">
-                        Coming Soon
-                    </span>
-
-                    <h3>
-                        More useful resources
-                    </h3>
-
-                    <p>
-                        Traifast is preparing practical documents,
-                        guides, templates and other downloadable resources
-                        for individuals, businesses and everyday use.
-                    </p>
-
-                    <span class="download-status">
-                        Coming soon
-                    </span>
-
-                </div>
-
-            </article>
-
-        </div>
+        <p>
+            Download useful documents, templates, guides and other
+            practical resources designed to make everyday life and
+            business easier.
+        </p>
 
     </section>
 
 
-    <!-- Future Categories -->
-    <section class="content-section light-section">
+    <h2 class="download-section-title">
+        💼 Business & Finance
+    </h2>
 
-        <div class="section-heading">
-            <h2>What you'll find here</h2>
+    <section class="downloads-grid">
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">📊</div>
+
+            <h3>
+                Business Planning Template
+            </h3>
 
             <p>
-                Our Downloads section will grow over time with resources
-                covering practical areas such as:
+                A practical template for planning and organizing
+                a small business.
             </p>
-        </div>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
 
 
-        <div class="category-grid">
+        <article class="download-card coming-soon-card">
 
-            <div class="category-card">
-                <h3>Business & Finance</h3>
-                <p>
-                    Useful business documents, financial tools,
-                    templates and guides.
-                </p>
-            </div>
+            <div class="download-icon">💰</div>
 
-            <div class="category-card">
-                <h3>Electrical & Technical</h3>
-                <p>
-                    Practical technical resources, references and
-                    electrical-related materials.
-                </p>
-            </div>
+            <h3>
+                Personal Budget Template
+            </h3>
 
-            <div class="category-card">
-                <h3>Templates & Documents</h3>
-                <p>
-                    Ready-to-use templates and documents for
-                    everyday and business needs.
-                </p>
-            </div>
+            <p>
+                A simple budgeting resource for tracking income,
+                expenses and savings.
+            </p>
 
-            <div class="category-card">
-                <h3>Guides & Learning</h3>
-                <p>
-                    Practical guides and educational resources
-                    designed to help you learn and solve problems.
-                </p>
-            </div>
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
 
-        </div>
+        </article>
+
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">🧾</div>
+
+            <h3>
+                Business Record Templates
+            </h3>
+
+            <p>
+                Practical templates for sales, purchases,
+                expenses and other business records.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
 
     </section>
 
 
-    <!-- CTA -->
-    <section class="blue-cta">
+    <h2 class="download-section-title">
+        ⚡ Electrical & Technical
+    </h2>
+
+    <section class="downloads-grid">
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">⚡</div>
+
+            <h3>
+                Electrical Reference Guide
+            </h3>
+
+            <p>
+                Useful electrical reference information for
+                technicians, students and practical work.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
+
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">🔌</div>
+
+            <h3>
+                Electrical Installation Checklist
+            </h3>
+
+            <p>
+                A practical checklist for reviewing electrical
+                installation work.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
+
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">📐</div>
+
+            <h3>
+                Technical Worksheets
+            </h3>
+
+            <p>
+                Practical worksheets and reference materials
+                for technical learning and work.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
+
+    </section>
+
+
+    <h2 class="download-section-title">
+        📚 Guides & Templates
+    </h2>
+
+    <section class="downloads-grid">
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">📄</div>
+
+            <h3>
+                Ready-to-Use Templates
+            </h3>
+
+            <p>
+                Useful documents and templates for everyday
+                personal and business needs.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
+
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">📘</div>
+
+            <h3>
+                Practical Guides
+            </h3>
+
+            <p>
+                Simple guides designed to help you understand
+                practical topics and solve everyday problems.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
+
+
+        <article class="download-card coming-soon-card">
+
+            <div class="download-icon">📝</div>
+
+            <h3>
+                Checklists & Worksheets
+            </h3>
+
+            <p>
+                Downloadable checklists and worksheets for
+                planning, learning and organization.
+            </p>
+
+            <span class="coming-soon-label">
+                Coming soon
+            </span>
+
+        </article>
+
+    </section>
+
+
+    <section class="downloads-cta">
 
         <h2>
-            More useful things are coming to Traifast.
+            More useful downloads are coming.
         </h2>
 
         <p>
-            Products. Tools. Downloads. Knowledge. Business resources.
-            Practical solutions for everyday life.
+            Traifast is building a growing collection of practical
+            documents, guides, templates and resources for individuals,
+            businesses and professionals.
         </p>
 
     </section>
@@ -215,6 +456,7 @@
 
     </div>
 
+
     <div class="footer-support">
 
         <a href="privacy-policy.html">
@@ -229,20 +471,19 @@
 
     </div>
 
+
     <div class="footer-bottom">
-        © <span id="year"></span> Traifast Enterprises Company Limited.
+
+        © <span id="year"></span>
+        Traifast Enterprises Company Limited.
         All rights reserved.
+
     </div>
 
 </footer>
 
 
 <script src="script.js"></script>
-
-<script>
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
-</script>
 
 </body>
 </html>
