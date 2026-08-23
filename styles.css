@@ -580,3 +580,69 @@ h1 span { color:var(--accent); }
     font-size: .78rem;
   }
   }
+/* =========================================================
+   PRIVACY / LEGAL PAGES
+   ========================================================= */
+
+.privacy-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 70px 25px 20px;
+
+  line-height: 1.7;
+}
+
+.privacy-page h1 {
+  margin-bottom: 10px;
+}
+
+.privacy-page h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.privacy-page h3 {
+  margin-top: 25px;
+}
+
+.privacy-page ul {
+  padding-left: 25px;
+}
+
+.privacy-page a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.last-updated {
+  color: #687586;
+  margin-bottom: 35px;
+}
+
+/* Privacy page on smaller screens */
+
+@media (max-width: 800px) {
+  .privacy-page {
+    padding: 50px 20px 20px;
+  }
+
+  .privacy-page h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-page {
+    padding: 40px 16px 20px;
+  }
+
+  .privacy-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .privacy-page h2 {
+    margin-top: 32px;
+  }
+}
