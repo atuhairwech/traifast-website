@@ -145,7 +145,35 @@
 </head>
 
 <body>
+<header class="site-header">
 
+    <a class="brand" href="index.html" aria-label="Traifast home">
+        <img
+            src="traifast-logo-transparent.jpg"
+            alt="Traifast"
+        >
+    </a>
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tools.html">Tools</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+</header>
   <main class="tools-page">
 
     <section class="tools-header">
@@ -393,6 +421,60 @@
     </section>
 
   </main>
+<footer class="site-footer">
 
+    <div class="footer-share">
+
+        <p class="footer-share-title">
+            Share Traifast
+        </p>
+
+        <div class="footer-share-buttons">
+
+            <a href="#" aria-label="Share on Facebook">
+                Facebook
+            </a>
+
+            <a href="#" aria-label="Share on WhatsApp">
+                WhatsApp
+            </a>
+
+            <a href="#" aria-label="Share on X">
+                X
+            </a>
+
+            <button type="button" id="copy-page-link">
+                Copy link
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="footer-support">
+
+        <a href="privacy-policy.html">
+            Privacy Policy
+        </a>
+
+        <span>•</span>
+
+        <a href="mailto:info@traifast.com">
+            Contact Traifast
+        </a>
+
+    </div>
+
+    <div class="footer-bottom">
+        © <span id="year"></span> Traifast Enterprises Company Limited.
+        All rights reserved.
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
 </body>
 </html>
