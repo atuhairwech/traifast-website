@@ -154,6 +154,84 @@
             width: 100%;
             text-align: center;
         }
+                .footer-share {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .footer-share p {
+            margin: 0 0 18px;
+            color: #687586;
+            font-size: 16px;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .share-buttons a,
+        .share-buttons button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 18px;
+            border: 1px solid #dce3ec;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #506176;
+            font: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .share-buttons a:hover,
+        .share-buttons button:hover {
+            color: #2f67d8;
+            border-color: #2f67d8;
+            transform: translateY(-2px);
+        }
+
+        .site-footer {
+            width: 100%;
+            text-align: center;
+        }
+
+        .site-footer .footer-support {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .site-footer .footer-bottom {
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+
+            .share-buttons {
+                gap: 8px;
+            }
+
+            .share-buttons a,
+            .share-buttons button {
+                padding: 0 14px;
+                min-height: 42px;
+            }
+
+            .site-footer .footer-support {
+                flex-wrap: wrap;
+            }
+
+        }
         @media (max-width: 700px) {
             .resources-page {
                 padding: 45px 20px 60px;
