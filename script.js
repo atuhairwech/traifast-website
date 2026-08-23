@@ -60,6 +60,29 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 /* -----------------------------------------
+   NATIVE SHARE
+   ----------------------------------------- */
+
+function sharePage() {
+
+  if (navigator.share) {
+
+    navigator.share({
+      title: "Traifast | Resources",
+      text: "Explore useful resources from Traifast.",
+      url: window.location.href
+    }).catch(() => {});
+
+  } else {
+
+    navigator.clipboard.writeText(window.location.href);
+
+    alert("Page link copied to clipboard.");
+
+  }
+
+}
+/* -----------------------------------------
    COPY PAGE LINK
    ----------------------------------------- */
 
