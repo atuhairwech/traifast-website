@@ -1093,7 +1093,75 @@ section[aria-label="Advertisement"] > div {
     </div>
 
 </section>
+<!-- =========================================
+     OPPORTUNITY SEARCH & FILTERS
+     ========================================= -->
 
+<section class="section" id="opportunity-search">
+
+    <div class="section-heading">
+
+        <h2>Search Opportunities</h2>
+
+        <p>
+            Find jobs, scholarships, internships, grants and other
+            opportunities that match what you are looking for.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <input
+            type="search"
+            id="opportunitySearch"
+            placeholder="Search opportunities..."
+            aria-label="Search opportunities"
+        >
+
+        <select
+            id="opportunityCategory"
+            aria-label="Filter by category">
+
+            <option value="all">All Categories</option>
+            <option value="job">Jobs</option>
+            <option value="scholarship">Scholarships</option>
+            <option value="internship">Internships</option>
+            <option value="grant">Grants & Funding</option>
+            <option value="fellowship">Fellowships</option>
+            <option value="competition">Competitions</option>
+            <option value="training">Training & Courses</option>
+            <option value="volunteering">Volunteering</option>
+            <option value="government">Government Opportunities</option>
+            <option value="tender">Tenders & Procurement</option>
+            <option value="international">International Opportunities</option>
+
+        </select>
+
+        <select
+            id="opportunityLocation"
+            aria-label="Filter by location">
+
+            <option value="all">All Locations</option>
+            <option value="uganda">Uganda</option>
+            <option value="east-africa">East Africa</option>
+            <option value="international">International</option>
+            <option value="online">Online / Remote</option>
+
+        </select>
+
+        <button
+            type="button"
+            id="clearOpportunityFilters"
+            class="button">
+
+            Clear Filters
+
+        </button>
+
+    </div>
+
+</section>
 <!-- =========================================
      LATEST OPPORTUNITIES
      ========================================= -->
