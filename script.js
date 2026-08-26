@@ -82,3 +82,134 @@ function sharePage() {
   }
 
 }
+/* -----------------------------------------
+   OPPORTUNITY SEARCH & FILTERS
+   ----------------------------------------- */
+
+const opportunitySearch =
+  document.getElementById("opportunitySearch");
+
+const opportunityCategory =
+  document.getElementById("opportunityCategory");
+
+const opportunityLocation =
+  document.getElementById("opportunityLocation");
+
+const clearOpportunityFilters =
+  document.getElementById("clearOpportunityFilters");
+
+const opportunityCards =
+  document.querySelectorAll(".opportunity-card");
+
+
+function filterOpportunities() {
+
+  const searchTerm =
+    opportunitySearch
+      ? opportunitySearch.value.toLowerCase().trim()
+      : "";
+
+  const category =
+    opportunityCategory
+      ? opportunityCategory.value
+      : "all";
+
+  const location =
+    opportunityLocation
+      ? opportunityLocation.value
+      : "all";
+
+
+  opportunityCards.forEach(card => {
+
+    const text =
+      card.textContent.toLowerCase();
+
+    const cardCategory =
+      card.dataset.category || "";
+
+    const cardLocation =
+      card.dataset.location || "";
+
+
+    const matchesSearch =
+      !searchTerm ||
+      text.includes(searchTerm);
+
+    const matchesCategory =
+      category === "all" ||
+      cardCategory === category;
+
+    const matchesLocation =
+      location === "all" ||
+      cardLocation === location;
+
+
+    card.style.display =
+      matchesSearch &&
+      matchesCategory &&
+      matchesLocation
+        ? ""
+        : "none";
+
+  });
+
+}
+
+
+/* Search */
+
+if (opportunitySearch) {
+
+  opportunitySearch.addEventListener(
+    "input",
+    filterOpportunities
+  );
+
+}
+
+
+/* Category filter */
+
+if (opportunityCategory) {
+
+  opportunityCategory.addEventListener(
+    "change",
+    filterOpportunities
+  );
+
+}
+
+
+/* Location filter */
+
+if (opportunityLocation) {
+
+  opportunityLocation.addEventListener(
+    "change",
+    filterOpportunities
+  );
+
+}
+
+
+/* Clear filters */
+
+if (clearOpportunityFilters) {
+
+  clearOpportunityFilters.addEventListener(
+    "click",
+    () => {
+
+      opportunitySearch.value = "";
+
+      opportunityCategory.value = "all";
+
+      opportunityLocation.value = "all";
+
+      filterOpportunities();
+
+    }
+  );
+
+}
