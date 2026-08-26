@@ -651,3 +651,78 @@ h1 span { color:var(--accent); }
     margin-top: 32px;
   }
 }
+/* =========================================
+   OPPORTUNITY SEARCH & FILTERS
+   ========================================= */
+
+#opportunity-search .card {
+  padding: 24px;
+}
+
+#opportunity-search input,
+#opportunity-search select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #d7dee8;
+  border-radius: 10px;
+  background: #fff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#opportunity-search input:focus,
+#opportunity-search select:focus {
+  border-color: var(--traifast-blue);
+  box-shadow: 0 0 0 3px rgba(47, 103, 216, 0.12);
+}
+
+#opportunity-search input::placeholder {
+  color: #7b8798;
+}
+
+#opportunity-search .card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+#clearOpportunityFilters {
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #d7dee8;
+  border-radius: 10px;
+  background: #fff;
+  color: #172033;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+#clearOpportunityFilters:hover {
+  border-color: var(--traifast-blue);
+  color: var(--traifast-blue);
+}
+
+
+/* -----------------------------------------
+   MOBILE
+   ----------------------------------------- */
+
+@media (max-width: 750px) {
+
+  #opportunity-search .card {
+    grid-template-columns: 1fr;
+  }
+
+  #clearOpportunityFilters {
+    width: 100%;
+  }
+
+}
