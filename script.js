@@ -101,6 +101,12 @@ const clearOpportunityFilters =
 const opportunityCards =
   document.querySelectorAll(".opportunity-card");
 
+const opportunityResultsCount =
+  document.getElementById("opportunityResultsCount");
+
+const opportunityNoResults =
+  document.getElementById("opportunityNoResults");
+
 
 function filterOpportunities() {
 
@@ -120,16 +126,19 @@ function filterOpportunities() {
       : "all";
 
 
+  let visibleCount = 0;
+
+
   opportunityCards.forEach(card => {
 
     const text =
       card.textContent.toLowerCase();
 
     const cardCategory =
-      card.dataset.category || "";
+      (card.dataset.category || "").toLowerCase();
 
     const cardLocation =
-      card.dataset.location || "";
+      (card.dataset.location || "").toLowerCase();
 
 
     const matchesSearch =
@@ -138,26 +147,61 @@ function filterOpportunities() {
 
     const matchesCategory =
       category === "all" ||
-      cardCategory === category;
+      cardCategory === category.toLowerCase();
 
     const matchesLocation =
       location === "all" ||
-      cardLocation === location;
+      cardLocation === location.toLowerCase();
+
+
+    const shouldShow =
+      matchesSearch &&
+      matchesCategory &&
+      matchesLocation;
 
 
     card.style.display =
-      matchesSearch &&
-      matchesCategory &&
-      matchesLocation
-        ? ""
-        : "none";
+      shouldShow ? "" : "none";
+
+
+    if (shouldShow) {
+      visibleCount++;
+    }
 
   });
+
+
+  /* -----------------------------------------
+     RESULTS COUNT
+     ----------------------------------------- */
+
+  if (opportunityResultsCount) {
+
+    opportunityResultsCount.textContent =
+      visibleCount === 1
+        ? "1 opportunity found"
+        : `${visibleCount} opportunities found`;
+
+  }
+
+
+  /* -----------------------------------------
+     NO RESULTS MESSAGE
+     ----------------------------------------- */
+
+  if (opportunityNoResults) {
+
+    opportunityNoResults.style.display =
+      visibleCount === 0 ? "" : "none";
+
+  }
 
 }
 
 
-/* Search */
+/* -----------------------------------------
+   SEARCH
+   ----------------------------------------- */
 
 if (opportunitySearch) {
 
@@ -169,7 +213,9 @@ if (opportunitySearch) {
 }
 
 
-/* Category filter */
+/* -----------------------------------------
+   CATEGORY FILTER
+   ----------------------------------------- */
 
 if (opportunityCategory) {
 
@@ -181,7 +227,9 @@ if (opportunityCategory) {
 }
 
 
-/* Location filter */
+/* -----------------------------------------
+   LOCATION FILTER
+   ----------------------------------------- */
 
 if (opportunityLocation) {
 
@@ -193,7 +241,9 @@ if (opportunityLocation) {
 }
 
 
-/* Clear filters */
+/* -----------------------------------------
+   CLEAR FILTERS
+   ----------------------------------------- */
 
 if (clearOpportunityFilters) {
 
@@ -201,11 +251,17 @@ if (clearOpportunityFilters) {
     "click",
     () => {
 
-      opportunitySearch.value = "";
+      if (opportunitySearch) {
+        opportunitySearch.value = "";
+      }
 
-      opportunityCategory.value = "all";
+      if (opportunityCategory) {
+        opportunityCategory.value = "all";
+      }
 
-      opportunityLocation.value = "all";
+      if (opportunityLocation) {
+        opportunityLocation.value = "all";
+      }
 
       filterOpportunities();
 
@@ -213,3 +269,10 @@ if (clearOpportunityFilters) {
   );
 
 }
+
+
+/* -----------------------------------------
+   INITIAL FILTER
+   ----------------------------------------- */
+
+filterOpportunities();
