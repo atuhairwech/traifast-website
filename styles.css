@@ -529,9 +529,13 @@ h1 span { color:var(--accent); }
         font-size: 12px;
     }
 
-    .footer-share-buttons {
-        gap: 6px;
-    }
+.footer-share-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
 
     .footer-share-buttons a,
     .footer-share-buttons button {
