@@ -591,7 +591,45 @@
 
 </footer>
 
+<script>
+const contactForm = document.getElementById("contactForm");
+const formSuccess = document.getElementById("formSuccess");
 
+contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector(".contact-submit");
+    const originalText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            contactForm.reset();
+            contactForm.style.display = "none";
+            formSuccess.hidden = false;
+        } else {
+            throw new Error("Submission failed");
+        }
+
+    } catch (error) {
+        alert("Sorry, your message could not be sent. Please try again.");
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    }
+});
+</script>
+
+<script src="script.js"></script>
 <script src="script.js"></script>
 
 </body>
