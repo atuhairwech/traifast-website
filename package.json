@@ -1,0 +1,16 @@
+{
+  "name": "traifast-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node --test tools/site.test.mjs tools/forms.test.mjs tools/deployment-safety.test.mjs",
+    "check:deployment": "node tools/check-deployment.mjs",
+    "preview:worker": "node tools/run-wrangler.mjs local",
+    "check:wrangler": "node tools/run-wrangler.mjs dry-run",
+    "deploy": "node tools/run-wrangler.mjs deploy",
+    "upload:version": "node tools/run-wrangler.mjs version"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": { "wrangler": "4.143.1" }
+}

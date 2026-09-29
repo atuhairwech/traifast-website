@@ -15,3 +15,28 @@
 form.is-submitting .btn[type="submit"]{cursor:wait;opacity:.72}
 @media(max-width:720px){.menu-btn{width:42px;height:42px;display:inline-grid;place-items:center;border:1px solid var(--line);border-radius:10px;transition:transform .2s ease,background .2s ease,color .2s ease}.menu-btn[aria-expanded="true"]{background:var(--navy);border-color:var(--navy);color:#fff;transform:rotate(90deg)}.nav-links a:not(.active):after{bottom:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.product-card,.solution,.tool-card,.menu-btn,.nav-links a:not(.active):after{transition:none}}
+
+/* Usability improvements use the existing palette unchanged. */
+.skip-link{position:absolute;left:20px;top:-100px;z-index:100;background:var(--white);color:var(--navy);padding:12px 18px;border:2px solid var(--navy)}
+.skip-link:focus{top:10px}
+:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+main:focus{outline:none}
+.topbar .container>div{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.toplinks{gap:16px}
+.contact-actions{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;font-weight:700}
+.contact-actions a,.small a{text-decoration:underline;text-underline-offset:3px}
+.field input,.field textarea,.field select{width:100%;min-width:0}
+.quote-form{margin-bottom:20px}
+.honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.btn{font:inherit;font-weight:750}
+.container,.split>div{min-width:0}
+.footer a{overflow-wrap:anywhere}
+@media(min-width:721px) and (max-width:1180px){.nav{height:auto;min-height:92px;flex-wrap:wrap;padding:12px 0;gap:12px}.nav-links{order:3;width:100%;justify-content:space-between}.nav-links a{padding:12px 0}.nav-links a.active:after,.nav-links a:not(.active):after{bottom:4px}}
+@media(max-width:720px){.topbar .container{display:block}.topbar .container>div{justify-content:center}.topbar .container>.toplinks{display:none}.nav-links{max-height:calc(100dvh - 100px);overflow-y:auto}.nav-links a,.footer a{min-height:44px;display:flex;align-items:center}.hero-actions .btn{width:100%}.contact-actions{flex-direction:column;gap:12px}.resource-grid{grid-template-columns:1fr}.page-hero h1{overflow-wrap:anywhere}html:not(.js) .nav{height:auto;flex-wrap:wrap;padding:12px 0}html:not(.js) .menu-btn{display:none}html:not(.js) .nav-links{display:flex;position:static;width:100%;max-height:none}}
+.mobile-quote{display:none}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:720px){.nav-links .mobile-quote{display:flex}}
+/* Large bold button labels meet 3:1 contrast while retaining brand colors. */
+.btn{font-size:19px;font-weight:750}
+/* Keep the commercial CTA separate from the seven primary navigation links. */
+@media(max-width:720px){.nav{height:auto;min-height:78px;flex-wrap:wrap;padding:12px 0;gap:12px}.nav .nav-cta{display:inline-flex;width:100%;order:3}.nav-links{top:100%;max-height:calc(100dvh - 220px)}html:not(.js) .nav-links{order:4}}
