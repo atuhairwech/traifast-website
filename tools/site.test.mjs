@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { execFileSync } from 'node:child_process';
 const root = resolve(import.meta.dirname, '..');
 const pages = readdirSync(root).filter(f => f.endsWith('.html'));
 for (const page of pages) {
@@ -32,10 +31,30 @@ for (const page of pages) {
     for (const [, id] of html.matchAll(/<label for="([^"]+)"/g)) assert.ok(ids.includes(id));
   });
 }
+// Frozen styles.css from approved pre-cleanup commit
+// 746b99437b4e3256e40307fa8bbb5c63fc5eafc4. Never regenerate from current CSS.
+// Test-only fixture: intentionally excluded from the public-file manifest.
+const originalBrandCSS = readFileSync(resolve(root, 'tools/fixtures/original-brand.css'));
+function assertOriginalBrandCSS(current) {
+  assert.ok(originalBrandCSS.length > 0, 'Original brand CSS fixture must not be empty');
+  assert.ok(current.subarray(0, originalBrandCSS.length).equals(originalBrandCSS),
+    'Original brand CSS must remain unchanged; only append reviewed enhancements');
+}
 test('all original brand CSS is preserved verbatim', () => {
-  const original = execFileSync('git', ['show', 'origin/main:styles.css'], { cwd: root, encoding: 'utf8' });
-  const current = readFileSync(resolve(root, 'styles.css'), 'utf8');
-  assert.ok(current.replace(/\r\n/g, '\n').startsWith(original.replace(/\r\n/g, '\n').trimEnd()));
+  assertOriginalBrandCSS(readFileSync(resolve(root, 'styles.css')));
+});
+test('brand CSS preservation rejects color changes and removed rules', () => {
+  assert.throws(() => assertOriginalBrandCSS(Buffer.from(originalBrandCSS.toString('utf8').replace('#0b2745', '#000000'))),
+    /Original brand CSS must remain unchanged/);
+  assert.throws(() => assertOriginalBrandCSS(originalBrandCSS.slice(0, -1)),
+    /Original brand CSS must remain unchanged/);
+});
+test('brand CSS preservation rejects byte changes but allows appended enhancements', () => {
+  assert.throws(() => assertOriginalBrandCSS(Buffer.from(originalBrandCSS.toString('utf8').replace(/\n/g, '\r\n'))),
+    /Original brand CSS must remain unchanged/);
+  assert.throws(() => assertOriginalBrandCSS(Buffer.from(originalBrandCSS.toString('utf8').trimEnd())),
+    /Original brand CSS must remain unchanged/);
+  assertOriginalBrandCSS(Buffer.concat([originalBrandCSS, Buffer.from('\n/* reviewed additions */')]));
 });
 test('production artifact excludes documents and implementation files', () => {
   assert.ok(existsSync(resolve(root, 'dist/index.html')));
